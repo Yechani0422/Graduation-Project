@@ -57,8 +57,8 @@ public class PlayerMove : MonoBehaviour
              {
                 rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);
                 isJump = false;
-             }                
-       }
+             }
+        }
     }
 
     //스프라이트 좌우 플립
