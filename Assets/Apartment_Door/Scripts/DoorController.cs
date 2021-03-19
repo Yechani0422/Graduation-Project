@@ -50,7 +50,6 @@ public class DoorController : MonoBehaviour
     {
         txtToDisplay.SetActive(true);
         playerInZone = true;
-        Debug.Log("asdfadf");
     }
 
     private void OnTriggerExit2D(Collider2D other)
