@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 537892775}
   - component: {fileID: 537892774}
   - component: {fileID: 537892773}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (4)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -184,7 +184,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &537892775
 MeshRenderer:
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 889306241}
   - component: {fileID: 889306240}
   - component: {fileID: 889306239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (3)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -540,7 +540,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -551,7 +551,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &889306241
 MeshRenderer:
@@ -627,7 +627,7 @@ GameObject:
   - component: {fileID: 960128320}
   - component: {fileID: 960128319}
   - component: {fileID: 960128323}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (1)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -647,7 +647,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -658,7 +658,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &960128320
 MeshRenderer:
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 1088656271}
   - component: {fileID: 1088656270}
   - component: {fileID: 1088656269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (6)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -884,7 +884,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -895,7 +895,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &1088656271
 MeshRenderer:
@@ -971,7 +971,7 @@ GameObject:
   - component: {fileID: 1102680634}
   - component: {fileID: 1102680633}
   - component: {fileID: 1102680637}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (2)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -991,7 +991,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1002,7 +1002,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &1102680634
 MeshRenderer:
@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 1605573509}
   - component: {fileID: 1605573508}
   - component: {fileID: 1605573507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cube (5)
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
@@ -1256,7 +1256,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1267,7 +1267,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 1}
+  m_Size: {x: 0.99999994, y: 0.1}
   m_EdgeRadius: 0
 --- !u!23 &1605573509
 MeshRenderer:
@@ -1407,6 +1407,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: cube (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052706, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052707, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052707, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 640965441959052710, guid: 7708beeea0234574584f69712fdaea5d,
         type: 3}
@@ -1669,6 +1684,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: cube
       objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052706, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052707, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 640965441959052707, guid: 7708beeea0234574584f69712fdaea5d,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 640965441959052710, guid: 7708beeea0234574584f69712fdaea5d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1811,6 +1841,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TestPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337187198616669974, guid: 4c15e2c83e4b9584f86b460be394d50c,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3337187198616669975, guid: 4c15e2c83e4b9584f86b460be394d50c,
         type: 3}
