@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class FlashController : MonoBehaviour
 {
     [SerializeField] FlashImage isFlashImage = null;
     [SerializeField] Color isColor = Color.white;
+    public AudioClip clip;
     // Update is called once per frame
     void Update()
     {
@@ -13,6 +15,7 @@ public class FlashController : MonoBehaviour
         {
             isFlashImage.StartFlash(0.5f, 1.0f, isColor);
             Debug.Log("flash");
+            SoundManager.instance.SFXPlay("FlashSound", clip);
         }
     }
 }
