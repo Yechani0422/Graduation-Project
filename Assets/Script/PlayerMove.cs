@@ -10,9 +10,19 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     public float maxJump;  //점프높이
 
+    private bool isWalk = false;
+
     private bool isJump = false;
 
     public bool isFlip = false;//펫 이 쫒아갈 좌표설정때문에
+
+    public enum PlayerState { idle, walk, jump };
+
+    public PlayerState playerState = PlayerState.idle;
+
+    Animator anim;
+
+    
 
     Rigidbody2D rigidbody;
     SpriteRenderer spriteRenderer;
@@ -23,6 +33,10 @@ public class PlayerMove : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         boxCollider2d = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
+
+        StartCoroutine(this.IsPlayerState());
+        StartCoroutine(this.PlayerAction());
     }
 
     // Update is called once per frame
@@ -31,6 +45,8 @@ public class PlayerMove : MonoBehaviour
         Move();
         Jump();
         SpriteFlip();
+
+       
     }
 
     //이동
@@ -39,23 +55,26 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Translate(Vector3.left * maxSpeed * Time.deltaTime);
-
+            isWalk = true;
         }
-        if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(Vector3.right * maxSpeed * Time.deltaTime);
-
+            isWalk = true;
+        }
+        else
+        {
+            isWalk = false;
         }
     }
 
     //점프
     void Jump()
     {
-      if (isJump==true&&Input.GetKeyDown(KeyCode.Space))
+      if (isJump==false&&Input.GetKeyDown(KeyCode.Space))
        {
-            
-             rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);
-             isJump = false;
+            isJump = true;
+            rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);            
         }
     }
 
@@ -73,38 +92,15 @@ public class PlayerMove : MonoBehaviour
             isFlip = false;
         }
     }
-
-    ////점프가능여부
-    //private bool IsGrounded()
-    //{
-    //    float extraHeightText = 0.1f;
-    //    RaycastHit2D rayhit = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0, Vector2.down, extraHeightText, LayerMask.GetMask("Ground"));
-    //    Color rayColor;
-
-    //    if(rayhit.collider!=null)
-    //    {
-    //        rayColor = Color.green;
-    //    }
-    //    else
-    //    {
-    //        rayColor = Color.red;
-    //    }
-
-    //    Debug.DrawRay(boxCollider2d.bounds.center + new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraHeightText), rayColor);
-    //    Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, 0), Vector2.down * (boxCollider2d.bounds.extents.y + extraHeightText), rayColor);
-    //    Debug.DrawRay(boxCollider2d.bounds.center - new Vector3(boxCollider2d.bounds.extents.x, boxCollider2d.bounds.extents.y + extraHeightText), Vector2.right *( boxCollider2d.bounds.extents.x * 2f), rayColor);
-
-    //    return rayhit.collider != null;
-    //}
-
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "FLOOR")
         {
-            if(rigidbody.velocity.y<=0)
+            if(rigidbody.velocity.y<0.01f)
             {
-                isJump = true;
-                Debug.Log("JumpTrue");
+                isJump = false;
+                Debug.Log("jumpfalse");
             }           
         }
     }
@@ -112,9 +108,61 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.tag == "FLOOR")
-        {           
-             isJump = false;
-             Debug.Log("JumpFalse");
+        {
+            if (rigidbody.velocity.y > 0)
+            {
+                isJump = true;
+                Debug.Log("jumptrue");
+            }                
         }
+    }
+
+
+    IEnumerator IsPlayerState()
+    {
+        while(true)
+        {
+            yield return new WaitForSeconds(0.0000001f);
+
+
+            if (isWalk == true && isJump == false)
+            {
+                playerState = PlayerState.walk;
+            }
+            else if(isJump==true)
+            {
+                playerState = PlayerState.jump;
+            }
+            else
+            {
+                playerState = PlayerState.idle;
+            }
+        }
+      
+        
+    }
+
+    IEnumerator PlayerAction()
+    {
+        while(true)
+        {
+            switch (playerState)
+            {
+                case PlayerState.idle:
+                    anim.SetBool("IsWalk", false);
+                    anim.SetBool("IsJump", false);
+                    break;
+                case PlayerState.walk:
+                    anim.SetBool("IsWalk", true);
+                    anim.SetBool("IsJump", false);
+                    break;
+                case PlayerState.jump:
+                    anim.SetBool("IsJump", true);
+                    anim.SetBool("IsWalk", false);
+                    break;
+            }
+            yield return null;
+        }
+      
     }
 }
