@@ -1090,6 +1090,16 @@ PrefabInstance:
       propertyPath: maxJump
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 3337187198616669963, guid: 4c15e2c83e4b9584f86b460be394d50c,
+        type: 3}
+      propertyPath: jumpTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3337187198616669963, guid: 4c15e2c83e4b9584f86b460be394d50c,
+        type: 3}
+      propertyPath: jumpForce
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3337187198616669973, guid: 4c15e2c83e4b9584f86b460be394d50c,
         type: 3}
       propertyPath: m_Name

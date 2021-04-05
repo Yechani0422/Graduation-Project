@@ -7,12 +7,15 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     public float maxSpeed; //최고속도
 
+    
     [SerializeField]
-    public float maxJump;  //점프높이
+    public float jumpForce;//점프값
 
     private bool isWalk = false;
 
-    private bool isJump = false;
+    private bool isGrounded = false;
+
+    private bool isJumping = false;
 
     public bool isFlip = false;//펫 이 쫒아갈 좌표설정때문에
 
@@ -20,13 +23,14 @@ public class PlayerMove : MonoBehaviour
 
     public PlayerState playerState = PlayerState.idle;
 
-    Animator anim;
-
-    
+    Animator anim;    
 
     Rigidbody2D rigidbody;
     SpriteRenderer spriteRenderer;
     BoxCollider2D boxCollider2d;
+
+    private float jumpTimeCounter;
+    public float jumpTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -71,10 +75,33 @@ public class PlayerMove : MonoBehaviour
     //점프
     void Jump()
     {
-      if (isJump==false&&Input.GetKeyDown(KeyCode.Space))
-       {
-            isJump = true;
-            rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);            
+        if (isGrounded == true && Input.GetKeyDown(KeyCode.Space))
+        {
+            isGrounded = false;
+            isJumping = true;
+            //rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);
+            rigidbody.velocity = Vector2.up * jumpForce;
+            jumpTimeCounter = jumpTime;
+
+        }
+
+        if (isJumping==true&&Input.GetKey(KeyCode.Space))
+        {
+            if (jumpTimeCounter > 0)
+            {
+                //rigidbody.AddForce(new Vector2(0, maxJump), ForceMode2D.Impulse);
+                rigidbody.velocity = Vector2.up * jumpForce;
+                jumpTimeCounter -= Time.deltaTime;
+            }
+            else
+            {
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
         }
     }
 
@@ -99,7 +126,7 @@ public class PlayerMove : MonoBehaviour
         {
             if(rigidbody.velocity.y<0.01f)
             {
-                isJump = false;
+                isGrounded = true;
                 Debug.Log("jumpfalse");
             }           
         }
@@ -109,11 +136,13 @@ public class PlayerMove : MonoBehaviour
     {
         if (other.gameObject.tag == "FLOOR")
         {
-            if (rigidbody.velocity.y > 0)
+            if (rigidbody.velocity.y < 0)
             {
-                isJump = true;
+                isGrounded = false;
                 Debug.Log("jumptrue");
-            }                
+            }
+
+           // isGrounded = false;
         }
     }
 
@@ -125,11 +154,11 @@ public class PlayerMove : MonoBehaviour
             yield return new WaitForSeconds(0.0000001f);
 
 
-            if (isWalk == true && isJump == false)
+            if (isWalk == true && isGrounded == true)
             {
                 playerState = PlayerState.walk;
             }
-            else if(isJump==true)
+            else if(isGrounded == false)
             {
                 playerState = PlayerState.jump;
             }
@@ -150,15 +179,15 @@ public class PlayerMove : MonoBehaviour
             {
                 case PlayerState.idle:
                     anim.SetBool("IsWalk", false);
-                    anim.SetBool("IsJump", false);
+                    anim.SetBool("IsGrounded", false);
                     break;
                 case PlayerState.walk:
                     anim.SetBool("IsWalk", true);
-                    anim.SetBool("IsJump", false);
+                    anim.SetBool("IsGrounded", false);
                     break;
                 case PlayerState.jump:
-                    anim.SetBool("IsJump", true);
-                    anim.SetBool("IsWalk", false);
+                    //anim.SetBool("IsWalk", false);
+                    anim.SetBool("IsGrounded", true);                    
                     break;
             }
             yield return null;
