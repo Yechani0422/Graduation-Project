@@ -11,4 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 59054172f882a434a8acb03d06efb8e5
+  - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 309c9b7a2d6aeb743bb13b31fc0849b4
+  - enabled: 1
+    path: Assets/Scenes/SaveLoad.unity
+    guid: 430f794ba85f32a48b5dad88d9508ad8
+  - enabled: 1
+    path: Assets/Scenes/TestScene2.unity
+    guid: 7580ca44da5c6844eb37e63ece3e4d99
+  - enabled: 1
+    path: Assets/Scenes/TestStageSelect.unity
+    guid: 70a5105a6386ce74eaa8db944e8729e5
   m_configObjects: {}

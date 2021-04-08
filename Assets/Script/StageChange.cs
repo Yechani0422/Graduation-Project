@@ -1,77 +1,61 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class StageChange : MonoBehaviour
 {
-    public SpriteRenderer SpringRend;
-    public SpriteRenderer SummerRend;
-    public SpriteRenderer FallRend;
-    public SpriteRenderer WinterRend;
+    public GameObject Spring;
+    public GameObject Summer;
+    public GameObject Fall;
+    public GameObject Winter;
+
+    public GameObject Door;
 
     private bool IsCollid=false;
     // Start is called before the first frame update
     void Start()
     {
-        SpringRend.sortingOrder = -1;
-        SummerRend.sortingOrder = -2;
-        FallRend.sortingOrder = -2;
-        WinterRend.sortingOrder = -2;
+
+        Spring.SetActive(false);
+        Summer.SetActive(false);
+        Fall.SetActive(false);
+        Winter.SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(IsCollid==true)
+        ChangeStage();
+        if (IsCollid == true && Door.GetComponent<DoorController>().doorOpened == true)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if(Input.GetKeyDown(KeyCode.Space))
             {
-                if (SpringRend.sortingOrder == -1)
+                if (Spring.activeSelf == true)
                 {
-                    SpringRend.sortingOrder = -2;
-                    SummerRend.sortingOrder = -1;
+                    OnClickSpring();
+                    EventSystem.current.SetSelectedGameObject(Spring);
                 }
-                else if (SummerRend.sortingOrder == -1)
+                else if (Summer.activeSelf == true)
                 {
-                    SummerRend.sortingOrder = -2;
-                    FallRend.sortingOrder = -1;
+                    OnClickSummer();
+                    EventSystem.current.SetSelectedGameObject(Summer);
                 }
-                else if (FallRend.sortingOrder == -1)
+                else if(Fall.activeSelf == true)
                 {
-                    FallRend.sortingOrder = -2;
-                    WinterRend.sortingOrder = -1;
+                    OnClickFall();
+                    EventSystem.current.SetSelectedGameObject(Fall);
                 }
-                else if (WinterRend.sortingOrder == -1)
+                else if(Winter.activeSelf == true)
                 {
-                    WinterRend.sortingOrder = -2;
-                    SpringRend.sortingOrder = -1;
+                    OnClickWinter();
+                    EventSystem.current.SetSelectedGameObject(Winter);
                 }
             }
-
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                if (SpringRend.sortingOrder == -1)
-                {
-                    SpringRend.sortingOrder = -2;
-                    WinterRend.sortingOrder = -1;
-                }
-                else if (WinterRend.sortingOrder == -1)
-                {
-                    WinterRend.sortingOrder = -2;
-                    FallRend.sortingOrder = -1;
-                }
-                else if (FallRend.sortingOrder == -1)
-                {
-                    FallRend.sortingOrder = -2;
-                    SummerRend.sortingOrder = -1;
-                }
-                else if (SummerRend.sortingOrder == -1)
-                {
-                    SummerRend.sortingOrder = -2;
-                    SpringRend.sortingOrder = -1;
-                }
-            }
-        }       
+           
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -83,5 +67,79 @@ public class StageChange : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         IsCollid = false;
+    }
+
+    private void ChangeStage()
+    {
+        if (IsCollid == true&&Door.GetComponent<DoorController>().doorOpened==true)
+        {
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                if(Spring.activeSelf==true)
+                {
+                    Spring.SetActive(false);
+                    Summer.SetActive(true);
+                }
+                else if(Summer.activeSelf==true)
+                {
+                    Summer.SetActive(false);
+                    Fall.SetActive(true);
+                }
+                else if(Fall.activeSelf==true)
+                {
+                    Fall.SetActive(false);
+                    Winter.SetActive(true);
+                }
+                else if(Winter.activeSelf==true)
+                {
+                    Winter.SetActive(false);
+                    Spring.SetActive(true);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                if (Spring.activeSelf == true)
+                {
+                    Spring.SetActive(false);
+                    Winter.SetActive(true);
+                }
+                else if (Winter.activeSelf == true)
+                {
+                    Winter.SetActive(false);
+                    Fall.SetActive(true);
+                }
+                else if (Fall.activeSelf == true)
+                {
+                    Fall.SetActive(false);
+                    Summer.SetActive(true);
+                }
+                else if (Summer.activeSelf == true)
+                {
+                    Summer.SetActive(false);
+                    Spring.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void OnClickSpring()
+    {       
+       // SceneManager.LoadScene("TestStageSelect");
+    }
+
+    public void OnClickSummer()
+    {
+       // SceneManager.LoadScene("TestStageSelect");
+    }
+
+    public void OnClickFall()
+    {
+        SceneManager.LoadScene("TestScene2");
+    }
+
+    public void OnClickWinter()
+    {
+        SceneManager.LoadScene("TestScene");
     }
 }

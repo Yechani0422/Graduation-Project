@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
     public void OnclickNEW()
     {
         Debug.Log("NEW");
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("TestStageSelect");
     }
     public void OnclickLOAD()
     {

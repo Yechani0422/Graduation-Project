@@ -9,7 +9,7 @@ public class DoorController : MonoBehaviour
     public GameObject txtToDisplay;             //Display the information about how to close/open the door
 
     private bool playerInZone;                  //Check if the player is in the zone
-    private bool doorOpened;                    //Check if door is currently opened or not
+    public bool doorOpened;                    //Check if door is currently opened or not
 
     private Animation doorAnim;
     private BoxCollider doorCollider;           //To enable the player to go through the door if door is opened else block him
