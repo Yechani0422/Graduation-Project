@@ -49,8 +49,9 @@ public class PlayerMove : MonoBehaviour
         Move();
         Jump();
         SpriteFlip();
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        Debug.Log(dontDestroy.StageID);
 
-       
     }
 
     //이동

@@ -135,7 +135,11 @@ public class StageChange : MonoBehaviour
 
     public void OnClickFall()
     {
-        SceneManager.LoadScene("TestScene2");
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if (dontDestroy.StageID>=2)
+        {
+            SceneManager.LoadScene("TestScene2");
+        }        
     }
 
     public void OnClickWinter()

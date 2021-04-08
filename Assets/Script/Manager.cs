@@ -39,6 +39,8 @@ public class Manager : MonoBehaviour
     public void OnClickSave()
     {
         SceneManager.LoadScene("SaveLoad");
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        PlayerPrefs.SetInt("Stage", dontDestroy.StageID);
         Time.timeScale = 1f;
     }
 
