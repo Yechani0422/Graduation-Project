@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Pause : MonoBehaviour
+public class Manager : MonoBehaviour
 {
     public GameObject SubMenu;
     // Start is called before the first frame update
