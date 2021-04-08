@@ -18,7 +18,12 @@ public class StageChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if(dontDestroy.StageID==0)
+        {
+            dontDestroy.StageID = 1;
+        }
+        
         Spring.SetActive(false);
         Summer.SetActive(false);
         Fall.SetActive(false);

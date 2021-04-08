@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
     public void OnclickLOAD()
     {
         Debug.Log("LOAD");
+        SceneManager.LoadScene("SaveLoad");
     }
     public void OnclickQUIT()
     {
