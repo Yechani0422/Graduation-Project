@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -31,6 +32,13 @@ public class PlayerMove : MonoBehaviour
 
     private float jumpTimeCounter;
     public float jumpTime;
+
+   
+   
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +49,9 @@ public class PlayerMove : MonoBehaviour
 
         StartCoroutine(this.IsPlayerState());
         StartCoroutine(this.PlayerAction());
+
+ 
+
     }
 
     // Update is called once per frame
@@ -49,9 +60,12 @@ public class PlayerMove : MonoBehaviour
         Move();
         Jump();
         SpriteFlip();
+
         DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
         Debug.Log(dontDestroy.StageID);
 
+
+        
     }
 
     //이동
@@ -120,6 +134,8 @@ public class PlayerMove : MonoBehaviour
             isFlip = false;
         }
     }
+
+ 
     
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -146,6 +162,7 @@ public class PlayerMove : MonoBehaviour
            // isGrounded = false;
         }
     }
+
 
 
     IEnumerator IsPlayerState()
