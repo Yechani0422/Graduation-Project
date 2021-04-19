@@ -47,7 +47,8 @@ public class CursorManager : MonoBehaviour
 
         byte[] imgBytes;
         string filename = Application.productName + "_" + System.DateTime.Now.ToString("yyyyMMddHHmmss") + ".png";
-        string location = @"F:\Wish\Graduation-Project\Assets\ScreenShot\";
+        //string location = @"F:\Wish\Graduation-Project\Assets\ScreenShot\";
+        string location = @"C:\Users\Public\Graduation-Project\Assets\ScreenShot";
         string finalLoc = location+filename;
        // string path = @"F:\Wish\Graduation-Project\Assets\ScreenShot\test.png";
         Texture2D screenShot = new Texture2D(leftCursorClicked.width, leftCursorClicked.height, TextureFormat.RGB24, false);
