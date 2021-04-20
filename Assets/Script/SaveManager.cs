@@ -229,4 +229,9 @@ public class SaveManager : MonoBehaviour
     {
         SaveID.saveID = saveID;
     }
+
+    public void OnClickExit()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

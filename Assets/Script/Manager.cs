@@ -46,7 +46,7 @@ public class Manager : MonoBehaviour
 
     public void OnClickExit()
     {
-        SceneManager.LoadScene("TestStageSelect");
+        SceneManager.LoadScene("Main Menu");
         Time.timeScale = 1f;
     }
 }

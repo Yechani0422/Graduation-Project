@@ -12,10 +12,10 @@ public class CursorManager : MonoBehaviour
     public Vector2 cursorHotSpot = Vector2.zero;
     [SerializeField]
     public Vector2 leftClickedHotSpot;
-    Vector2 cursorPosition;
+    Vector2 cursorPosition;    
 
-
-
+    [HideInInspector]
+    public Texture2D screenShot;
 
     Vector2 position;
     public Image cameraRange;
@@ -42,9 +42,6 @@ public class CursorManager : MonoBehaviour
         Cursor.SetCursor(cursor, cursorHotSpot, CursorMode.Auto);
         cameraRange.GetComponent<Image>().enabled = false;
         camera.GetComponent<Image>().enabled = false;
-
-
-
     }
 
     private void Update()
@@ -70,6 +67,7 @@ public class CursorManager : MonoBehaviour
             Cursor.SetCursor(cursor, cursorHotSpot, CursorMode.Auto);
             StartCoroutine("Capture");
         }
+
 
         if (cameraOn == true)
         {
@@ -136,20 +134,16 @@ public class CursorManager : MonoBehaviour
         yield return new WaitForEndOfFrame();
         byte[] imgBytes;
         string filename = "ScreenShot" + "_" + System.DateTime.Now.ToString("ddHHmmss") + ".png";
-        string location = @"F:\Wish\Graduation-Project\Assets\ScreenShot\";
-        //string location = @"C:\Users\Public\Graduation-Project\Assets\ScreenShot\";
+        //string location = @"F:\Wish\Graduation-Project\Assets\ScreenShot\";
+        string location = @"C:\Users\Public\Graduation-Project\Assets\ScreenShot\";
         string finalLoc = location + filename;
         isFlashImage.StartFlash(0.5f, 1.0f, isColor);
         SoundManager.instance.SFXPlay("FlashSound", clip);
-        Texture2D screenShot = new Texture2D(leftCursorClicked.width, leftCursorClicked.height, TextureFormat.RGB24, false);
+        screenShot = new Texture2D(leftCursorClicked.width, leftCursorClicked.height, TextureFormat.RGB24, false);
         screenShot.ReadPixels(new Rect(cursorPosition.x - 150, cursorPosition.y - 140, leftCursorClicked.width, leftCursorClicked.height), 0, 0, false);
         //Debug.Log(cursorPosition.x - 150);
         screenShot.Apply();
         imgBytes = screenShot.EncodeToPNG();
-        System.IO.File.WriteAllBytes(finalLoc, imgBytes);
-
+        System.IO.File.WriteAllBytes(Application.dataPath + "/ScreenShot/" + filename, imgBytes);
     }
-
-
-
 };

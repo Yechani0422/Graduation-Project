@@ -151,4 +151,9 @@ public class StageChange : MonoBehaviour
     {
         SceneManager.LoadScene("TestScene");
     }
+
+    public void OnClickExit()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
 }

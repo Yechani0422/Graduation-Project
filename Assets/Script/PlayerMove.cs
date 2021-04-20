@@ -54,12 +54,12 @@ public class PlayerMove : MonoBehaviour
     //이동
     void Move()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * maxSpeed * Time.deltaTime);
             isWalk = true;
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * maxSpeed * Time.deltaTime);
             isWalk = true;
