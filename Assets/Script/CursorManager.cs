@@ -144,6 +144,6 @@ public class CursorManager : MonoBehaviour
         //Debug.Log(cursorPosition.x - 150);
         screenShot.Apply();
         imgBytes = screenShot.EncodeToPNG();
-        System.IO.File.WriteAllBytes(Application.dataPath + "/ScreenShot/" + filename, imgBytes);
+       // System.IO.File.WriteAllBytes(Application.dataPath + "/ScreenShot/" + filename, imgBytes);
     }
 };
