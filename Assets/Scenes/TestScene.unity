@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: 5ba9903bc8bc0db48b01d40db4e73c25, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -342,7 +342,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &163196833
 RectTransform:
@@ -540,7 +540,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &210664889
 RectTransform:
@@ -1178,7 +1178,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: fff18a3631e81784bb23a32817c678a6, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1282,7 +1282,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &666805827
 RectTransform:
@@ -1774,7 +1774,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &734434554
 RectTransform:
@@ -2837,7 +2837,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1092356241
 RectTransform:
@@ -2914,7 +2914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: 7e5ddcf11f29f424fa65bf6e04febfbc, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3300,7 +3300,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1139606797
 RectTransform:
@@ -3442,7 +3442,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1230002366
 RectTransform:
@@ -3519,7 +3519,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: 05ce08b07d251a74882c86d7df85d350, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: a338cf977396bf04ab638d61ad82f8ea, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4879,7 +4879,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 14723f874d735e04fabc961dbe01d498, type: 2}
+  m_Texture: {fileID: 8400000, guid: 68ab90dc93ebac04882e5f7c22b7ab8d, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -5140,7 +5140,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1834524338
 RectTransform:
@@ -5760,7 +5760,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &2054879126
 RectTransform:

@@ -69,7 +69,7 @@ public class InventoryManager : MonoBehaviour
             screenShot.ReadPixels(new Rect(Input.mousePosition.x+10-pictureWidth/2,Input.mousePosition.y-10-pictureHeight/2, pictureWidth, pictureHeight), 0, 0, false);
             screenShot.Apply();
 
-            enqueue(screenShot);
+            TakePicture(screenShot);
         }
 
         
@@ -90,6 +90,11 @@ public class InventoryManager : MonoBehaviour
             else if (pictureCount == 3)
             {
                 renderTexture3.Release();
+                pictureCount -= 1;
+            }
+            else if (pictureCount == 4)
+            {
+                renderTexture4.Release();
                 pictureCount -= 1;
             }
         }
@@ -131,7 +136,7 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void enqueue(Texture2D screenShot)
+    public void TakePicture(Texture2D screenShot)
     {
         if(pictureCount == 0)
         {
@@ -150,6 +155,17 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+            canvas3.sortingOrder = 1;
+        }
+        else if (pictureCount == 3)
+        {
+            Graphics.Blit(renderTexture3, renderTexture4);
+            Graphics.Blit(renderTexture2, renderTexture3);
+            Graphics.Blit(renderTexture1, renderTexture2);
+            Graphics.Blit(screenShot, renderTexture1);
+            pictureCount += 1;
+            canvas3.sortingOrder = 0;
+            canvas4.sortingOrder = 2;
         }
     }
 }
