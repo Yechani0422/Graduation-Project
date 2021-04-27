@@ -793,15 +793,12 @@ MonoBehaviour:
   renderTexture8: {fileID: 8400000, guid: 7e5ddcf11f29f424fa65bf6e04febfbc, type: 2}
   renderTexture9: {fileID: 8400000, guid: 68ab90dc93ebac04882e5f7c22b7ab8d, type: 2}
   swapSlot: {fileID: 8400000, guid: 5a13a9d583bef8441959530ccabf10e0, type: 2}
-  canvas1: {fileID: 1139606796}
-  canvas2: {fileID: 734434553}
-  canvas3: {fileID: 1092356240}
-  canvas4: {fileID: 210664888}
-  canvas5: {fileID: 163196832}
-  canvas6: {fileID: 1834524337}
-  canvas7: {fileID: 666805826}
-  canvas8: {fileID: 2054879125}
-  canvas9: {fileID: 1230002365}
+  image1: {fileID: 1024285684}
+  image2: {fileID: 1111674497}
+  image3: {fileID: 990503983}
+  rawImage1: {fileID: 919047389}
+  rawImage2: {fileID: 2084721455}
+  rawImage3: {fileID: 1809445629}
   pictureWidth: 263
   pictureHeight: 173
   screenShot: {fileID: 0}
