@@ -47,7 +47,9 @@ public class InventoryManager : MonoBehaviour
     private int pictureHeight;
 
     private int pictureCount;
-    private bool showInventory;
+
+    [HideInInspector]
+    public bool showInventory;
 
     [HideInInspector]
     public Texture2D screenShot;

@@ -46,9 +46,18 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
-        Jump();
-        SpriteFlip();
+        InventoryManager inventoryManager = FindObjectOfType <InventoryManager > ();
+
+        if(inventoryManager.showInventory==false)
+        {
+            Move();
+            Jump();
+            SpriteFlip();
+        }
+        else
+        {
+            playerState = PlayerState.idle;
+        }
     }
 
     //이동
