@@ -6,10 +6,13 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour
 {
     public GameObject SubMenu;
+    [HideInInspector]
+    public bool isPause;
     // Start is called before the first frame update
     void Start()
     {
         SubMenu.SetActive(false);
+        isPause = false;
     }
 
     // Update is called once per frame
@@ -20,11 +23,13 @@ public class Manager : MonoBehaviour
             if(SubMenu.activeSelf==true)
             {
                 SubMenu.SetActive(false);
+                isPause = false;
                 Time.timeScale = 1f;
             }
             else
             {
                 SubMenu.SetActive(true);
+                isPause = true;
                 Time.timeScale = 0f;
             }           
         }

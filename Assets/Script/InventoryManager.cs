@@ -71,54 +71,60 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonUp(0))
+        Manager manager = FindObjectOfType<Manager>();
+
+        if(manager.isPause==false)
         {
-            screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
-            screenShot.ReadPixels(new Rect(Input.mousePosition.x+10-pictureWidth/2,Input.mousePosition.y-10-pictureHeight/2, pictureWidth, pictureHeight), 0, 0, false);
-            screenShot.Apply();
+            if (Input.GetMouseButtonUp(0))
+            {
+                screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
+                screenShot.ReadPixels(new Rect(Input.mousePosition.x + 10 - pictureWidth / 2, Input.mousePosition.y - 10 - pictureHeight / 2, pictureWidth, pictureHeight), 0, 0, false);
+                screenShot.Apply();
 
-            TakePicture(screenShot);
+                TakePicture(screenShot);
+            }
+
+
+
+            if (showInventory == false)
+            {
+                image1.enabled = false;
+                image2.enabled = false;
+                image3.enabled = false;
+
+                rawImage1.enabled = false;
+                rawImage2.enabled = false;
+                rawImage3.enabled = false;
+            }
+
+
+            if (showInventory == true)
+            {
+                image1.enabled = true;
+                image2.enabled = true;
+                image3.enabled = true;
+
+                rawImage1.enabled = true;
+                rawImage2.enabled = true;
+                rawImage3.enabled = true;
+
+                ChoicePicture();
+                DeletePicture();
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                if (showInventory == true)
+                {
+                    showInventory = false;
+                }
+                else
+                {
+                    showInventory = true;
+                }
+            }
         }
-
         
-
-        if(showInventory==false)
-        {
-            image1.enabled = false;
-            image2.enabled = false;
-            image3.enabled = false;
-
-            rawImage1.enabled = false;
-            rawImage2.enabled = false;
-            rawImage3.enabled = false;
-        }
-
-
-        if(showInventory==true)
-        {
-            image1.enabled = true;
-            image2.enabled = true;
-            image3.enabled = true;
-
-            rawImage1.enabled = true;
-            rawImage2.enabled = true;
-            rawImage3.enabled = true;
-
-            ChoicePicture();
-            DeletePicture();
-        }
-
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            if(showInventory==true)
-            {
-                showInventory = false;
-            }
-            else
-            {
-                showInventory = true;
-            }
-        }
         
     }
 

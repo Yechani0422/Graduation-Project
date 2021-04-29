@@ -113,25 +113,6 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
-
-        if (!PlayerPrefs.HasKey("Stage1"))
-        {
-            _StageID1 = 1;
-            //return;
-        }
-
-        if (!PlayerPrefs.HasKey("Stage2"))
-        {
-            _StageID2 = 1;
-            //return;
-        }
-
-        if (!PlayerPrefs.HasKey("Stage3"))
-        {
-            _StageID3 = 1;
-            //return;
-        }
-
         if (PlayerPrefs.HasKey("Time1"))
         {
             isSlot1 = true;
@@ -160,34 +141,47 @@ public class SaveManager : MonoBehaviour
     {       
         if (SaveID.saveID == 1)
         {
-            if (_StageID1 == 0)
+            //if (_StageID1 == 0)
+            //{
+            //    _StageID1 = 1;
+            //}
+            if(isSlot1==true)
             {
-                _StageID1 = 1;
+                SceneManager.LoadScene("TestStageSelect");
+                DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+                dontDestroy.StageID = _StageID1;
             }
-            DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
-            dontDestroy.StageID = _StageID1;
+           
         }
         else if (SaveID.saveID == 2)
         {
-            if (_StageID2 == 0)
+            //if (_StageID2 == 0)
+            //{
+            //    _StageID2 = 1;
+            //}
+            if (isSlot2 == true)
             {
-                _StageID2 = 1;
+                SceneManager.LoadScene("TestStageSelect");
+                DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+                dontDestroy.StageID = _StageID2;
             }
-            DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
-            dontDestroy.StageID = _StageID2;
         }
         else if (SaveID.saveID == 3)
         {
-            if (_StageID3 == 0)
+            //if (_StageID3 == 0)
+            //{
+            //    _StageID3 = 1;
+            //}
+            if (isSlot3 == true)
             {
-                _StageID3 = 1;
+                SceneManager.LoadScene("TestStageSelect");
+                DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+                dontDestroy.StageID = _StageID3;
             }
-            DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
-            dontDestroy.StageID = _StageID3;
         }
         
         
-        SceneManager.LoadScene("TestStageSelect");
+        //SceneManager.LoadScene("TestStageSelect");
     }
 
     public void OnClickDelete()
@@ -196,7 +190,7 @@ public class SaveManager : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("Time1");
             PlayerPrefs.DeleteKey("Stage1");
-            _StageID1 = 0;
+            //_StageID1 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
             isSlot1 = false;
@@ -205,7 +199,7 @@ public class SaveManager : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("Time2");
             PlayerPrefs.DeleteKey("Stage2");
-            _StageID2 = 0;
+            //_StageID2 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
             isSlot2 = false;
@@ -214,7 +208,7 @@ public class SaveManager : MonoBehaviour
         {
             PlayerPrefs.DeleteKey("Time3");
             PlayerPrefs.DeleteKey("Stage3");
-            _StageID3 = 0;
+            //_StageID3 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
             isSlot3 = false;
