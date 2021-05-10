@@ -57,7 +57,7 @@ public class MiniCamera : MonoBehaviour
         float distance = Vector3.Distance(hit.point, transform.position);
         distance = Mathf.Min(distance, 8.3f);
         var newHitPos = transform.position + hitPosDir * distance;
-        transform.position = new Vector3(hit.point.x, hit.point.y, 0);
+        transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z+1);
     }
 
     void OnTriggerEnter2D(Collider2D other)
