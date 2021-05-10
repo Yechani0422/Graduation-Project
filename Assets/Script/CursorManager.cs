@@ -140,7 +140,7 @@ public class CursorManager : MonoBehaviour
         isFlashImage.StartFlash(0.5f, 1.0f, isColor);
         SoundManager.instance.SFXPlay("FlashSound", clip);
         screenShot = new Texture2D(leftCursorClicked.width, leftCursorClicked.height, TextureFormat.RGB24, false);
-        screenShot.ReadPixels(new Rect(cursorPosition.x - 150, cursorPosition.y - 140, leftCursorClicked.width, leftCursorClicked.height), 0, 0, false);
+        //screenShot.ReadPixels(new Rect(cursorPosition.x - 150, cursorPosition.y - 140, leftCursorClicked.width, leftCursorClicked.height), 0, 0, false);
         //Debug.Log(cursorPosition.x - 150);
         screenShot.Apply();
         imgBytes = screenShot.EncodeToPNG();

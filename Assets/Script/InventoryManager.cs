@@ -79,11 +79,7 @@ public class InventoryManager : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
-                screenShot.ReadPixels(new Rect(Input.mousePosition.x + 10 - pictureWidth / 2, Input.mousePosition.y - 10 - pictureHeight / 2, pictureWidth, pictureHeight), 0, 0, false);
-                screenShot.Apply();
-
-                TakePicture(screenShot);
+                StartCoroutine("Capture");
             }
 
 
@@ -125,6 +121,8 @@ public class InventoryManager : MonoBehaviour
                     showInventory = true;
                 }
             }
+
+            
         }
         
         
@@ -405,5 +403,15 @@ public class InventoryManager : MonoBehaviour
             }
 
         }
+    }
+
+    IEnumerator Capture()
+    {
+        yield return new WaitForEndOfFrame();
+        screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
+        screenShot.ReadPixels(new Rect(Input.mousePosition.x + 10 - pictureWidth / 2, Input.mousePosition.y - 10 - pictureHeight / 2, pictureWidth, pictureHeight), 0, 0, false);
+        screenShot.Apply();
+
+        TakePicture(screenShot);
     }
 }
