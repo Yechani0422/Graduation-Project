@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    [SerializeField]
+    private RenderTexture miniCam;
 
     [SerializeField]
     private RenderTexture renderTexture1;
@@ -408,10 +410,16 @@ public class InventoryManager : MonoBehaviour
     IEnumerator Capture()
     {
         yield return new WaitForEndOfFrame();
-        screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
-        screenShot.ReadPixels(new Rect(Input.mousePosition.x + 10 - pictureWidth / 2, Input.mousePosition.y - 10 - pictureHeight / 2, pictureWidth, pictureHeight), 0, 0, false);
+        //screenShot = new Texture2D(pictureWidth, pictureHeight, TextureFormat.RGB24, false);
+        //screenShot.ReadPixels(new Rect(Input.mousePosition.x  - pictureWidth / 2, Input.mousePosition.y  - pictureHeight / 2, pictureWidth, pictureHeight), 0, 0, false);
+        //screenShot.Apply();
+
+        screenShot = new Texture2D(miniCam.width, miniCam.height, TextureFormat.RGB24, false);
+        RenderTexture.active = miniCam;
+        screenShot.ReadPixels(new Rect(0, 0, miniCam.width, miniCam.height), 0, 0, false);
         screenShot.Apply();
 
+        RenderTexture.active = null;
         TakePicture(screenShot);
     }
 }
