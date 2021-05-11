@@ -5216,6 +5216,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1453782572903330049}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1948275642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 2e0098241bade9544afd31c229db6443,
+    type: 3}
+  m_PrefabInstance: {fileID: 806137487}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1948275644
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948275642}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38, y: 0.58, z: 0.34}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1955618662 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3384383375267000767, guid: 6eb20ba06548ba6479a8a49d33a15ddb,
@@ -6087,6 +6106,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 509481462562660669, guid: 7145724923cd7d244a8a983364c50172,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 509481462562660671, guid: 7145724923cd7d244a8a983364c50172,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6141,6 +6165,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8119687683898241429, guid: 7145724923cd7d244a8a983364c50172,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7145724923cd7d244a8a983364c50172, type: 3}
