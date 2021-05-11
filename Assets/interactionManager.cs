@@ -24,10 +24,6 @@ public class interactionManager : MonoBehaviour
         {
             interactionName= other.gameObject.name;
         }
-        else
-        {
-            interactionName = "null";
-        }
     }
 
     void OnTriggerExit(Collider other)

@@ -14,8 +14,8 @@ public class FlashController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F))
         {
            // isFlashImage.StartFlash(0.5f, 1.0f, isColor);
-            Debug.Log("flash");
-            SoundManager.instance.SFXPlay("FlashSound", clip);
+           // Debug.Log("flash");
+           // SoundManager.instance.SFXPlay("FlashSound", clip);
         }
     }
 }

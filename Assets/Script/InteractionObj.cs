@@ -13,9 +13,10 @@ public class InteractionObj : MonoBehaviour
     public string wantName;
     [HideInInspector]
     public bool isInteraction;
-    
-    
 
+    [SerializeField]
+    private InventoryManager inventoryManager;
+    
     void Start()
     {
         isInteraction = false;
@@ -26,16 +27,21 @@ public class InteractionObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(inventoryManager.isDead==true)
+        {
+            inventoryManager.isDead = false;
+            Destroy(gameObject);
+        }
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
             isInteraction = true;
             Bubble.SetActive(true);
-            Want.SetActive(true);
+            Want.SetActive(true);    
             Debug.Log("enter");
         }
     }

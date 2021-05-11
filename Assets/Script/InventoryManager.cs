@@ -81,6 +81,8 @@ public class InventoryManager : MonoBehaviour
     public bool isInteraction;
 
     private string wantName;
+    [HideInInspector]
+    public bool isDead;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,6 +113,7 @@ public class InventoryManager : MonoBehaviour
         wantName = "null";
 
         isInteraction = false;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -349,10 +352,64 @@ public class InventoryManager : MonoBehaviour
 
     private void InteractionPicture()
     {
-        if(Input.GetKeyDown(KeyCode.F))
+        if(isInteraction==true)
         {
+           if(Input.GetKeyDown(KeyCode.F))
+            {
+                if (interactionName1 == wantName)
+                {
+                    isDead = true;
+                    if (pictureCount > 3)
+                    {
+                        renderTexture1.Release();
+                        Graphics.Blit(renderTexture2, renderTexture1);
+                        Graphics.Blit(renderTexture3, renderTexture2);
+                        Graphics.Blit(renderTexture4, renderTexture3);
+                        Graphics.Blit(renderTexture5, renderTexture4);
+                        Graphics.Blit(renderTexture6, renderTexture5);
+                        Graphics.Blit(renderTexture7, renderTexture6);
+                        Graphics.Blit(renderTexture8, renderTexture7);
+
+                        interactionName1 = "null";
+                        interactionName1 = interactionName2;
+                        interactionName2 = interactionName3;
+                        interactionName3 = interactionName4;
+                        interactionName4 = interactionName5;
+                        interactionName5 = interactionName6;
+                        interactionName6 = interactionName7;
+                        interactionName7 = interactionName8;
+                    }
+                    if (pictureCount <= 3)
+                    {
+                        renderTexture1.Release();
+                        Graphics.Blit(renderTexture2, renderTexture1);
+                        Graphics.Blit(renderTexture9, renderTexture2);
+                        renderTexture9.Release();
+
+                        interactionName1 = "null";
+                        interactionName1 = interactionName2;
+                        interactionName2 = interactionName9;
+                        interactionName9 = "null";
+                    }
+
+                    if (pictureCount > 0)
+                    {
+                        pictureCount -= 1;
+                    }
+
+
+                    swapSlot.Release();
+                    swapInteractionName = "null";
+                }
+                else
+                {
+                    //사진이 틀렸을때
+                    Debug.Log("잘못된사진");
+                }
+            }               
             
         }
+        
     }
 
     private void ChoicePicture()
@@ -656,7 +713,6 @@ public class InventoryManager : MonoBehaviour
 
         interactionManager interactionMgr= FindObjectOfType<interactionManager>();
 
-        
 
         TakePicture(screenShot,interactionMgr.interactionName);
     }
