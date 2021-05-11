@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractionObj : MonoBehaviour
 {
@@ -8,8 +9,13 @@ public class InteractionObj : MonoBehaviour
     private GameObject Bubble;
     [SerializeField]
     private GameObject Want;
+    [SerializeField]
+    public string wantName;
     [HideInInspector]
     public bool isInteraction;
+    
+    
+
     void Start()
     {
         isInteraction = false;

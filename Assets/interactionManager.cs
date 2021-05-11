@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class interactionManager : MonoBehaviour
 {
+    [HideInInspector]
+    public string interactionName;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,10 +20,18 @@ public class interactionManager : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        //Debug.Log("cameracollider");
         if (other.gameObject.tag == "Want")
         {
-            Debug.Log("Want");
+            interactionName= other.gameObject.name;
         }
+        else
+        {
+            interactionName = "null";
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        interactionName = "null";
     }
 }

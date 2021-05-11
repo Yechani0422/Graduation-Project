@@ -8,6 +8,7 @@ TagManager:
   - FLOOR
   - CameraRange
   - Want
+  - Interaction
   layers:
   - Default
   - TransparentFX

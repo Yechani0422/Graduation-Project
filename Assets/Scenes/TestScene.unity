@@ -657,7 +657,7 @@ GameObject:
   - component: {fileID: 242758304}
   m_Layer: 0
   m_Name: testOBJ
-  m_TagString: Untagged
+  m_TagString: Interaction
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -766,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bubble: {fileID: 1580106150}
   Want: {fileID: 1304165082}
+  wantName: SnowMan
   isInteraction: 0
 --- !u!1 &255424350 stripped
 GameObject:

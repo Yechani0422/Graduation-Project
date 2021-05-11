@@ -29,6 +29,27 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]
     private RenderTexture swapSlot;
 
+    [HideInInspector]
+    public string interactionName1;
+    [HideInInspector]
+    public string interactionName2;
+    [HideInInspector]
+    public string interactionName3;
+    [HideInInspector]
+    public string interactionName4;
+    [HideInInspector]
+    public string interactionName5;
+    [HideInInspector]
+    public string interactionName6;
+    [HideInInspector]
+    public string interactionName7;
+    [HideInInspector]
+    public string interactionName8;
+    [HideInInspector]
+    public string interactionName9;
+    [HideInInspector]
+    public string swapInteractionName;  
+
     [SerializeField]
     private Image image1;
     [SerializeField]
@@ -55,6 +76,11 @@ public class InventoryManager : MonoBehaviour
 
     [HideInInspector]
     public Texture2D screenShot;
+
+    [HideInInspector]
+    public bool isInteraction;
+
+    private string wantName;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +96,21 @@ public class InventoryManager : MonoBehaviour
         renderTexture9.Release();
         swapSlot.Release();
         showInventory = false;
+
+        interactionName1 = "null";
+        interactionName2 = "null";
+        interactionName3 = "null";
+        interactionName4 = "null";
+        interactionName5 = "null";
+        interactionName6 = "null";
+        interactionName7 = "null";
+        interactionName8 = "null";
+        interactionName9 = "null";
+        swapInteractionName = "null";
+
+        wantName = "null";
+
+        isInteraction = false;
     }
 
     // Update is called once per frame
@@ -108,6 +149,7 @@ public class InventoryManager : MonoBehaviour
                 rawImage2.enabled = true;
                 rawImage3.enabled = true;
 
+                InteractionPicture();
                 ChoicePicture();
                 DeletePicture();
             }
@@ -130,18 +172,23 @@ public class InventoryManager : MonoBehaviour
         
     }
 
-    private void TakePicture(Texture2D screenShot)
+    private void TakePicture(Texture2D screenShot,string interactionName)
     {
         if(pictureCount == 0)
         {
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName1 = interactionName;
         }
         else if(pictureCount == 1)
         {
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if(pictureCount == 2)
         {
@@ -149,6 +196,10 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName9 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 3)
         {
@@ -156,6 +207,10 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 4)
         {
@@ -164,6 +219,11 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName4 = interactionName3;
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 5)
         {
@@ -173,6 +233,12 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName5 = interactionName4;
+            interactionName4 = interactionName3;
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 6)
         {
@@ -183,6 +249,13 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName6 = interactionName5;
+            interactionName5 = interactionName4;
+            interactionName4 = interactionName3;
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 7)
         {
@@ -194,6 +267,14 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName7 = interactionName6;
+            interactionName6 = interactionName5;
+            interactionName5 = interactionName4;
+            interactionName4 = interactionName3;
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
         else if (pictureCount == 8)
         {
@@ -206,6 +287,15 @@ public class InventoryManager : MonoBehaviour
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
+
+            interactionName8 = interactionName7;
+            interactionName7 = interactionName6;
+            interactionName6 = interactionName5;
+            interactionName5 = interactionName4;
+            interactionName4 = interactionName3;
+            interactionName3 = interactionName2;
+            interactionName2 = interactionName1;
+            interactionName1 = interactionName;
         }
     }
 
@@ -223,6 +313,15 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture6, renderTexture5);
                 Graphics.Blit(renderTexture7, renderTexture6);
                 Graphics.Blit(renderTexture8, renderTexture7);
+
+                interactionName1 = "null";
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName5;
+                interactionName5 = interactionName6;
+                interactionName6 = interactionName7;
+                interactionName7 = interactionName8;
             }
             if (pictureCount <= 3)
             {
@@ -230,6 +329,11 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture1);
                 Graphics.Blit(renderTexture9, renderTexture2);
                 renderTexture9.Release();
+
+                interactionName1 = "null";
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName9;
+                interactionName9 = "null";
             }
 
             if (pictureCount > 0)
@@ -239,6 +343,15 @@ public class InventoryManager : MonoBehaviour
 
 
             swapSlot.Release();
+            swapInteractionName = "null";
+        }
+    }
+
+    private void InteractionPicture()
+    {
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            
         }
     }
 
@@ -258,6 +371,17 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName8;
+                interactionName8 = interactionName7;
+                interactionName7 = interactionName6;
+                interactionName6 = interactionName5;
+                interactionName5 = interactionName4;
+                interactionName4 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 8)
             {
@@ -270,6 +394,16 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName7;
+                interactionName7 = interactionName6;
+                interactionName6 = interactionName5;
+                interactionName5 = interactionName4;
+                interactionName4 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 7)
             {
@@ -281,6 +415,15 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName6;
+                interactionName6 = interactionName5;
+                interactionName5 = interactionName4;
+                interactionName4 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 6)
             {
@@ -291,6 +434,14 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName5;
+                interactionName5 = interactionName4;
+                interactionName4 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 5)
             {
@@ -300,6 +451,13 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName4;
+                interactionName4 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 4)
             {
@@ -308,6 +466,12 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture3);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName3;
+                interactionName3 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 3)
             {
@@ -315,12 +479,21 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture9);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName9;
+                interactionName9 = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
             else if (pictureCount == 2)
             {
                 Graphics.Blit(renderTexture2, swapSlot);
                 Graphics.Blit(renderTexture1, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture1);
+
+                swapInteractionName = interactionName2;
+                interactionName2 = interactionName1;
+                interactionName1 = swapInteractionName;
             }
 
         }
@@ -339,6 +512,17 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture8, renderTexture7);
                 Graphics.Blit(renderTexture9, renderTexture8);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName5;
+                interactionName5 = interactionName6;
+                interactionName6 = interactionName7;
+                interactionName7 = interactionName8;
+                interactionName8 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 8)
             {
@@ -351,6 +535,16 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture7, renderTexture6);
                 Graphics.Blit(renderTexture9, renderTexture7);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName5;
+                interactionName5 = interactionName6;
+                interactionName6 = interactionName7;
+                interactionName7 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 7)
             {
@@ -362,6 +556,15 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture6, renderTexture5);
                 Graphics.Blit(renderTexture9, renderTexture6);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName5;
+                interactionName5 = interactionName6;
+                interactionName6 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 6)
             {
@@ -372,6 +575,14 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture5, renderTexture4);
                 Graphics.Blit(renderTexture9, renderTexture5);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName5;
+                interactionName5 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 5)
             {
@@ -381,6 +592,13 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture4, renderTexture3);
                 Graphics.Blit(renderTexture9, renderTexture4);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName4;
+                interactionName4 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 4)
             {
@@ -389,6 +607,12 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture3, renderTexture2);
                 Graphics.Blit(renderTexture9, renderTexture3);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName3;
+                interactionName3 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 3)
             {
@@ -396,12 +620,21 @@ public class InventoryManager : MonoBehaviour
                 Graphics.Blit(renderTexture2, renderTexture1);
                 Graphics.Blit(renderTexture9, renderTexture2);
                 Graphics.Blit(swapSlot, renderTexture9);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = interactionName9;
+                interactionName9 = swapInteractionName;
             }
             else if (pictureCount == 2)
             {
                 Graphics.Blit(renderTexture1, swapSlot);
                 Graphics.Blit(renderTexture2, renderTexture1);
                 Graphics.Blit(swapSlot, renderTexture2);
+
+                swapInteractionName = interactionName1;
+                interactionName1 = interactionName2;
+                interactionName2 = swapInteractionName;
             }
 
         }
@@ -420,6 +653,29 @@ public class InventoryManager : MonoBehaviour
         screenShot.Apply();
 
         RenderTexture.active = null;
-        TakePicture(screenShot);
+
+        interactionManager interactionMgr= FindObjectOfType<interactionManager>();
+
+        
+
+        TakePicture(screenShot,interactionMgr.interactionName);
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if(other.gameObject.tag=="Interaction")
+        {
+            isInteraction = true;
+            wantName = other.gameObject.transform.GetComponent<InteractionObj>().wantName;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Interaction")
+        {
+            isInteraction = false;
+            wantName = "null";
+        }
     }
 }
