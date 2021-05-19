@@ -120,13 +120,15 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         Manager manager = FindObjectOfType<Manager>();
+        InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        if(manager.isPause==false)
+        if (manager.isPause==false)
         {
             if (Input.GetMouseButtonUp(0))
             {
                 StartCoroutine("Capture");
             }
+            
 
 
 
@@ -171,7 +173,14 @@ public class InventoryManager : MonoBehaviour
 
             
         }
-        
+        if(manager.isPause == true)
+        {
+            StopCoroutine("Capture");
+        }
+        if(inventory.showInventory == true)
+        {
+            StopCoroutine("Capture");
+        }
         
     }
 
@@ -696,7 +705,7 @@ public class InventoryManager : MonoBehaviour
 
         }
     }
-
+    
     IEnumerator Capture()
     {
         yield return new WaitForEndOfFrame();
@@ -716,7 +725,7 @@ public class InventoryManager : MonoBehaviour
 
         TakePicture(screenShot,interactionMgr.interactionName);
     }
-
+    
     void OnTriggerStay2D(Collider2D other)
     {
         if(other.gameObject.tag=="Interaction")

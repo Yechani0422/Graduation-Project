@@ -9,9 +9,8 @@ public class CursorManager : MonoBehaviour
 
     public Texture2D cursor;
     public Texture2D leftCursorClicked;
-    public Vector2 cursorHotSpot = Vector2.zero;
-    [SerializeField]
-    public Vector2 leftClickedHotSpot;
+    Vector2 cursorHotSpot = Vector2.zero;
+    Vector2 leftClickedHotSpot;
     Vector2 cursorPosition;    
 
     [HideInInspector]
@@ -21,16 +20,6 @@ public class CursorManager : MonoBehaviour
     public Image cameraRange;
     public Image camera;
     public Canvas cameraCanvas;
-    private Vector2 posUp;
-    public float maxCameraRange;
-    bool cameraOn = false;
-
-    public AudioClip clip;
-
-
-    [SerializeField] FlashImage isFlashImage = null;
-    [SerializeField] Color isColor = Color.black;
-
 
 
 
@@ -41,45 +30,41 @@ public class CursorManager : MonoBehaviour
     {
         Cursor.SetCursor(cursor, cursorHotSpot, CursorMode.Auto);
         cameraRange.GetComponent<Image>().enabled = false;
-        camera.GetComponent<Image>().enabled = false;
     }
 
     private void Update()
     {
+        Manager manager = FindObjectOfType<Manager>();
+        InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        if (Input.GetMouseButtonDown(0))
+        if (manager.isPause == false)
         {
-            cameraOn = true;
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (inventory.showInventory == false)
+                {
+                    cameraRange.GetComponent<Image>().enabled = true;
+                    Cursor.visible = false;
+                }
 
-            cameraRange.GetComponent<Image>().enabled = true;
-            camera.GetComponent<Image>().enabled = true;
-            // Cursor.SetCursor(leftCursorClicked, leftClickedHotSpot, CursorMode.ForceSoftware);
-            Cursor.visible = true;
+            }
 
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                if (inventory.showInventory == false)
+                {
+                    cameraRange.GetComponent<Image>().enabled = false;
+                    Cursor.visible = true;
+                    Cursor.SetCursor(cursor, cursorHotSpot, CursorMode.Auto);
+                }
+
+            }
         }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            cameraOn = false;
-            cameraRange.GetComponent<Image>().enabled = false;
-            camera.GetComponent<Image>().enabled = false;
-            // Cursor.visible = true;
-            Cursor.SetCursor(cursor, cursorHotSpot, CursorMode.Auto);
-            StartCoroutine("Capture");
-        }
-
-
-        if (cameraOn == true)
-        {
-            CameraIndicator();
-        }
-        
-
-
 
     }
 
-
+    /*
 
     void CameraIndicator()
     {
@@ -109,9 +94,9 @@ public class CursorManager : MonoBehaviour
         var newHitPos = transform.position + hitPosDir * distance;
         cameraCanvas.transform.position = (newHitPos);
     }
+    */
 
-
-
+    /*
     IEnumerator Capture()
     {
         if (cursorPosition.x - 150 <= 622)
@@ -137,8 +122,6 @@ public class CursorManager : MonoBehaviour
         //string location = @"F:\Wish\Graduation-Project\Assets\ScreenShot\";
         string location = @"C:\Users\Public\Graduation-Project\Assets\ScreenShot\";
         string finalLoc = location + filename;
-        isFlashImage.StartFlash(0.5f, 1.0f, isColor);
-        SoundManager.instance.SFXPlay("FlashSound", clip);
         screenShot = new Texture2D(leftCursorClicked.width, leftCursorClicked.height, TextureFormat.RGB24, false);
         //screenShot.ReadPixels(new Rect(cursorPosition.x - 150, cursorPosition.y - 140, leftCursorClicked.width, leftCursorClicked.height), 0, 0, false);
         //Debug.Log(cursorPosition.x - 150);
@@ -146,4 +129,5 @@ public class CursorManager : MonoBehaviour
         imgBytes = screenShot.EncodeToPNG();
        // System.IO.File.WriteAllBytes(Application.dataPath + "/ScreenShot/" + filename, imgBytes);
     }
+    */
 };
