@@ -24,10 +24,22 @@ public class interactionManager : MonoBehaviour
         {
             interactionName= other.gameObject.name;
         }
+
+        if (other.gameObject.tag == "Phantom")
+        {
+            interactionName = other.gameObject.name;
+            PhantomObj phantomObj = FindObjectOfType<PhantomObj>();
+            if(Input.GetMouseButtonUp(0))
+            {
+                phantomObj.visible = true;
+            }
+      
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
         interactionName = "null";
     }
+
 }

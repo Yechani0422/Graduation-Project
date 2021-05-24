@@ -9,7 +9,7 @@ public class CursorManager : MonoBehaviour
 
     public Texture2D cursor;
     public Texture2D leftCursorClicked;
-    Vector2 cursorHotSpot = Vector2.zero;
+    public Vector2 cursorHotSpot = Vector2.zero;
     Vector2 leftClickedHotSpot;
     Vector2 cursorPosition;    
 

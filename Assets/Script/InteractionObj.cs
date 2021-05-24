@@ -31,6 +31,7 @@ public class InteractionObj : MonoBehaviour
         {
             inventoryManager.isDead = false;
             Destroy(gameObject);
+            
         }
         
     }

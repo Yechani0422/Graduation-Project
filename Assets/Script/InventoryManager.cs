@@ -48,7 +48,7 @@ public class InventoryManager : MonoBehaviour
     [HideInInspector]
     public string interactionName9;
     [HideInInspector]
-    public string swapInteractionName;  
+    public string swapInteractionName;
 
     [SerializeField]
     private Image image1;
@@ -83,6 +83,9 @@ public class InventoryManager : MonoBehaviour
     private string wantName;
     [HideInInspector]
     public bool isDead;
+
+    private bool modeChange;
+ 
     // Start is called before the first frame update
     void Start()
     {
@@ -114,6 +117,8 @@ public class InventoryManager : MonoBehaviour
 
         isInteraction = false;
         isDead = false;
+        modeChange = false;
+
     }
 
     // Update is called once per frame
@@ -122,14 +127,30 @@ public class InventoryManager : MonoBehaviour
         Manager manager = FindObjectOfType<Manager>();
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
 
-        if (manager.isPause==false)
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            modeChange = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            modeChange = false;
+        }
+
+        if (manager.isPause == false)
         {
             if (Input.GetMouseButtonUp(0))
             {
-                StartCoroutine("Capture");
+                    if(modeChange == false)
+                {
+                    StartCoroutine("Capture");
+                }
+                   
+               
+                
             }
-            
 
+      
 
 
             if (showInventory == false)
@@ -171,29 +192,33 @@ public class InventoryManager : MonoBehaviour
                 }
             }
 
-            
+
         }
-        if(manager.isPause == true)
+        if (manager.isPause == true)
         {
             StopCoroutine("Capture");
+            StopCoroutine("PhantomCapture");
         }
-        if(inventory.showInventory == true)
+        if (inventory.showInventory == true)
         {
             StopCoroutine("Capture");
+            StopCoroutine("PhantomCapture");
         }
-        
+
     }
 
-    private void TakePicture(Texture2D screenShot,string interactionName)
+    private void TakePicture(Texture2D screenShot, string interactionName)
     {
-        if(pictureCount == 0)
+       
+
+        if (pictureCount == 0)
         {
             Graphics.Blit(screenShot, renderTexture1);
             pictureCount += 1;
 
             interactionName1 = interactionName;
         }
-        else if(pictureCount == 1)
+        else if (pictureCount == 1)
         {
             Graphics.Blit(renderTexture1, renderTexture2);
             Graphics.Blit(screenShot, renderTexture1);
@@ -202,7 +227,7 @@ public class InventoryManager : MonoBehaviour
             interactionName2 = interactionName1;
             interactionName1 = interactionName;
         }
-        else if(pictureCount == 2)
+        else if (pictureCount == 2)
         {
             Graphics.Blit(renderTexture2, renderTexture9);
             Graphics.Blit(renderTexture1, renderTexture2);
@@ -361,9 +386,9 @@ public class InventoryManager : MonoBehaviour
 
     private void InteractionPicture()
     {
-        if(isInteraction==true)
+        if (isInteraction == true)
         {
-           if(Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (interactionName1 == wantName)
                 {
@@ -415,14 +440,15 @@ public class InventoryManager : MonoBehaviour
                     //사진이 틀렸을때
                     Debug.Log("잘못된사진");
                 }
-            }               
-            
+            }
+
         }
-        
+
     }
 
     private void ChoicePicture()
     {
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (pictureCount == 9)
@@ -705,7 +731,7 @@ public class InventoryManager : MonoBehaviour
 
         }
     }
-    
+
     IEnumerator Capture()
     {
         yield return new WaitForEndOfFrame();
@@ -720,19 +746,23 @@ public class InventoryManager : MonoBehaviour
 
         RenderTexture.active = null;
 
-        interactionManager interactionMgr= FindObjectOfType<interactionManager>();
+        interactionManager interactionMgr = FindObjectOfType<interactionManager>();
 
 
-        TakePicture(screenShot,interactionMgr.interactionName);
+        TakePicture(screenShot, interactionMgr.interactionName);
     }
-    
+  
+
+
     void OnTriggerStay2D(Collider2D other)
     {
-        if(other.gameObject.tag=="Interaction")
+        if (other.gameObject.tag == "Interaction")
         {
             isInteraction = true;
             wantName = other.gameObject.transform.GetComponent<InteractionObj>().wantName;
         }
+
+
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -744,3 +774,10 @@ public class InventoryManager : MonoBehaviour
         }
     }
 }
+
+
+   
+
+
+
+

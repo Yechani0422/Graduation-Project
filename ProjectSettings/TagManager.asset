@@ -9,6 +9,7 @@ TagManager:
   - CameraRange
   - Want
   - Interaction
+  - Phantom
   layers:
   - Default
   - TransparentFX
