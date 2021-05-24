@@ -6,16 +6,27 @@ public class interactionManager : MonoBehaviour
 {
     [HideInInspector]
     public string interactionName;
+
+    private bool modeChange;
+
     // Start is called before the first frame update
     void Start()
     {
+        modeChange = false;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            modeChange = false;
+        }
+        if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            modeChange = true;
+        }
     }
 
     void OnTriggerStay(Collider other)
@@ -25,16 +36,20 @@ public class interactionManager : MonoBehaviour
             interactionName= other.gameObject.name;
         }
 
-        if (other.gameObject.tag == "Phantom")
+        if(modeChange == true)
         {
-            interactionName = other.gameObject.name;
-            PhantomObj phantomObj = FindObjectOfType<PhantomObj>();
-            if(Input.GetMouseButtonUp(0))
+            if (other.gameObject.tag == "Phantom")
             {
-                phantomObj.visible = true;
+                interactionName = other.gameObject.name;
+                PhantomObj phantomObj = FindObjectOfType<PhantomObj>();
+                if (Input.GetMouseButtonUp(0))
+                {
+                    phantomObj.visible = true;
+                }
+
             }
-      
         }
+     
     }
 
     void OnTriggerExit(Collider other)
