@@ -18,7 +18,7 @@ public class MiniCamera : MonoBehaviour
 
     private bool isPressed;
 
-    private bool modeChange;
+   
     public AudioClip clip;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,6 @@ public class MiniCamera : MonoBehaviour
         image.enabled = false;
         baseeffect.enabled = false;
         phantomeffect.enabled = false;
-        modeChange = false;
     }
 
     // Update is called once per frame
@@ -43,11 +42,11 @@ public class MiniCamera : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                modeChange = true;
+               inventory.modeChange = true;
             }
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                modeChange = false;
+                inventory.modeChange = false;
             }
 
             if (Input.GetMouseButton(0))
@@ -92,14 +91,14 @@ public class MiniCamera : MonoBehaviour
             {
                 if (inventory.showInventory == false)
                 {
-                    if(modeChange == false)
+                    if(inventory.modeChange == false)
                     {
                         isPressed = false;
                         rawImage.enabled = false;
                         image.enabled = false;
                         StartCoroutine("BaseEffect");
                     }
-                    else if(modeChange == true)
+                    else if(inventory.modeChange == true)
                     {
                         isPressed = false;
                         rawImage.enabled = false;

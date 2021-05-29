@@ -83,8 +83,8 @@ public class InventoryManager : MonoBehaviour
     private string wantName;
     [HideInInspector]
     public bool isDead;
-
-    private bool modeChange;
+    [HideInInspector]
+    public bool modeChange;
  
     // Start is called before the first frame update
     void Start()
