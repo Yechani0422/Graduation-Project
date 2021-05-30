@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4178295882839423876}
   - component: {fileID: 4947009889866203570}
   - component: {fileID: 1701171140524391755}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: "\uBC84\uC2A4\uC815\uB958\uC7A5 (1)"
-  m_TagString: Untagged
+  m_TagString: Want
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 8973137728997473353}
   - component: {fileID: 8973137728997473354}
   - component: {fileID: 8973137728997473355}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collider
   m_TagString: FLOOR
   m_Icon: {fileID: 0}
