@@ -27,11 +27,21 @@ public class InteractionObj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(inventoryManager.isDead==true)
-        {
-            inventoryManager.isDead = false;
-            Destroy(gameObject);
+        //if(inventoryManager.isDead==true)
+        //{
+        //    inventoryManager.isDead = false;
+        //    Destroy(gameObject);
             
+        //}
+
+        if(inventoryManager.blockName==gameObject.name)
+        {
+            if(inventoryManager.isDead==true)
+            {
+                inventoryManager.isDead = false;
+                Destroy(gameObject);
+            }
+           
         }
         
     }

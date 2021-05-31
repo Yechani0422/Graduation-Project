@@ -82,6 +82,8 @@ public class InventoryManager : MonoBehaviour
 
     private string wantName;
     [HideInInspector]
+    public string blockName;
+    [HideInInspector]
     public bool isDead;
     [HideInInspector]
     public bool modeChange;
@@ -114,6 +116,7 @@ public class InventoryManager : MonoBehaviour
         swapInteractionName = "null";
 
         wantName = "null";
+        blockName = "null";
 
         isInteraction = false;
         isDead = false;
@@ -760,6 +763,7 @@ public class InventoryManager : MonoBehaviour
         {
             isInteraction = true;
             wantName = other.gameObject.transform.GetComponent<InteractionObj>().wantName;
+            blockName = other.gameObject.name;
         }
 
 
@@ -771,6 +775,7 @@ public class InventoryManager : MonoBehaviour
         {
             isInteraction = false;
             wantName = "null";
+            blockName = "null";
         }
     }
 }

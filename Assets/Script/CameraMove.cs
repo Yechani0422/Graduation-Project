@@ -9,6 +9,11 @@ public class CameraMove : MonoBehaviour
 
     [SerializeField]
     public Vector3 offset;
+
+    [SerializeField]
+    private float minX;
+    [SerializeField]
+    private float maxX;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +23,10 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.position.x+offset.x, player.position.y+offset.y, player.position.z+offset.z);
+        if(player.position.x>=minX&&player.position.x<=maxX)
+        {
+            transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y, player.position.z + offset.z);
+        }
+       
     }
 }
