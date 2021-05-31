@@ -11,10 +11,8 @@ public class StageChange : MonoBehaviour
     public GameObject Summer;
     public GameObject Fall;
     public GameObject Winter;
-
-    public GameObject Door;
-
-    private bool IsCollid=false;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +32,7 @@ public class StageChange : MonoBehaviour
     void Update()
     {
         ChangeStage();
-        if (IsCollid == true && Door.GetComponent<DoorController>().doorOpened == true)
-        {
+       
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 if (Spring.activeSelf == true)
@@ -60,24 +57,23 @@ public class StageChange : MonoBehaviour
                 }
             }
            
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        IsCollid = true;
+       
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        IsCollid = false;
+        
     }
 
     private void ChangeStage()
     {
-        if (IsCollid == true&&Door.GetComponent<DoorController>().doorOpened==true)
-        {
+       
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 if(Spring.activeSelf==true)
@@ -125,12 +121,16 @@ public class StageChange : MonoBehaviour
                     Spring.SetActive(true);
                 }
             }
-        }
+        
     }
 
     public void OnClickSpring()
-    {       
-       // SceneManager.LoadScene("TestStageSelect");
+    {
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if (dontDestroy.StageID >= 2)
+        {
+            SceneManager.LoadScene("TestScene2");
+        }
     }
 
     public void OnClickSummer()
@@ -140,11 +140,7 @@ public class StageChange : MonoBehaviour
 
     public void OnClickFall()
     {
-        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
-        if (dontDestroy.StageID>=2)
-        {
-            SceneManager.LoadScene("TestScene2");
-        }        
+        
     }
 
     public void OnClickWinter()
