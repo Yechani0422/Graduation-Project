@@ -25,7 +25,12 @@ public class CameraMove : MonoBehaviour
     {
         if(player.position.x>=minX&&player.position.x<=maxX)
         {
-            transform.position = new Vector3(player.position.x + offset.x, player.position.y + offset.y, player.position.z + offset.z);
+            transform.position = new Vector3(player.position.x + offset.x, 1.508056f + offset.y, player.position.z + offset.z);
+        }
+        else
+        {
+            Vector3 vec = transform.position;
+            transform.position = new Vector3(vec.x, 6.508056f, vec.z);
         }
        
     }
