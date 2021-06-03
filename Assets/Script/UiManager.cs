@@ -25,7 +25,7 @@ public class UiManager : MonoBehaviour
     public void OnclickNewGameBtn()
     {
  
-        SceneManager.LoadScene("WinterStage");
+        SceneManager.LoadScene("TestStageSelect");
         
     }
 

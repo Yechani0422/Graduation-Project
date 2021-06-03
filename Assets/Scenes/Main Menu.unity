@@ -1304,7 +1304,6 @@ MonoBehaviour:
   title: {fileID: 1612170791}
   helpImage1: {fileID: 23912832}
   helpImage2: {fileID: 1071330667}
-  MainMenuBGM: {fileID: 1756058295}
 --- !u!1 &1576398857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1465,7 @@ GameObject:
   - component: {fileID: 1756058295}
   m_Layer: 0
   m_Name: DontDestroy
-  m_TagString: Untagged
+  m_TagString: DontDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

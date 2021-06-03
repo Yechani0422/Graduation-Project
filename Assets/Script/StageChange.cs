@@ -21,6 +21,11 @@ public class StageChange : MonoBehaviour
         {
             dontDestroy.StageID = 1;
         }
+
+        GameObject dont = GameObject.FindGameObjectWithTag("DontDestroy");
+        AudioSource soundOff = dont.GetComponent<AudioSource>();
+
+        soundOff.Stop();
         
         Spring.SetActive(false);
         Summer.SetActive(false);

@@ -10,6 +10,7 @@ TagManager:
   - Want
   - Interaction
   - Phantom
+  - DontDestroy
   layers:
   - Default
   - TransparentFX
