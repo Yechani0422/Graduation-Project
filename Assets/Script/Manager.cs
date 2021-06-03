@@ -11,6 +11,11 @@ public class Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if (dontDestroy.StageID == 0)
+        {
+            dontDestroy.StageID = 1;
+        }
         SubMenu.SetActive(false);
         isPause = false;
     }

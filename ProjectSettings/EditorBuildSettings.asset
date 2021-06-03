@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SaveLoad.unity
     guid: 430f794ba85f32a48b5dad88d9508ad8
   - enabled: 1
-    path: Assets/Scenes/TestScene2.unity
+    path: Assets/Scenes/SpringStage.unity
     guid: 7580ca44da5c6844eb37e63ece3e4d99
   - enabled: 1
     path: Assets/Scenes/TestStageSelect.unity

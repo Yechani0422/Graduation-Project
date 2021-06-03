@@ -17,10 +17,6 @@ public class UiManager : MonoBehaviour
     public Image helpImage1;
     public Image helpImage2;
 
-    public Button LoadButton1;
-    public Button LoadButton2;
-    public Button LoadButton3;
-
 
 
     public void OnclickNewGameBtn()
@@ -30,14 +26,7 @@ public class UiManager : MonoBehaviour
 
     public void OnclickContinueBtn()
     {
-        NewGame.gameObject.SetActive(false);
-        Continue.gameObject.SetActive(false);
-        Help.gameObject.SetActive(false);
-        Quit.gameObject.SetActive(false);
-        Back.gameObject.SetActive(true);
-        LoadButton1.gameObject.SetActive(true);
-        LoadButton2.gameObject.SetActive(true);
-        LoadButton3.gameObject.SetActive(true);
+        SceneManager.LoadScene("SaveLoad");
     }
 
     public void OnclickHelpBtn()
@@ -68,14 +57,9 @@ public class UiManager : MonoBehaviour
         Continue.gameObject.SetActive(true);
         Help.gameObject.SetActive(true);
         Quit.gameObject.SetActive(true);
-        LoadButton1.gameObject.SetActive(false);
-        LoadButton2.gameObject.SetActive(false);
-        LoadButton3.gameObject.SetActive(false);
         Back.gameObject.SetActive(false);
         title.enabled = true;
         helpImage1.enabled = false;
         helpImage2.enabled = false;
-
-
     }
 }

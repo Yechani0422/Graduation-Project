@@ -129,7 +129,7 @@ public class StageChange : MonoBehaviour
         DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
         if (dontDestroy.StageID >= 2)
         {
-            SceneManager.LoadScene("TestScene2");
+            SceneManager.LoadScene("SpringStage");
         }
     }
 
@@ -145,7 +145,7 @@ public class StageChange : MonoBehaviour
 
     public void OnClickWinter()
     {
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("WinterStage");
     }
 
     public void OnClickExit()

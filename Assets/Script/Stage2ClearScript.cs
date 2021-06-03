@@ -48,7 +48,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName1 == "봄_안내판")
+            else if (inventoryManager.interactionName1 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -61,7 +61,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName2 == "봄_안내판")
+            else if (inventoryManager.interactionName2 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -74,7 +74,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName3 == "봄_안내판")
+            else if (inventoryManager.interactionName3 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -87,7 +87,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName4 == "봄_안내판")
+            else if (inventoryManager.interactionName4 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -101,7 +101,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName5 == "봄_안내판")
+            else if (inventoryManager.interactionName5 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -115,7 +115,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName6 == "봄_안내판")
+            else if (inventoryManager.interactionName6 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -128,7 +128,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName7 == "봄_안내판")
+            else if (inventoryManager.interactionName7 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -141,7 +141,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName8 == "봄_안내판")
+            else if (inventoryManager.interactionName8 == "봄_울타리")
             {
                 count2 += 1;
             }
@@ -154,7 +154,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count1 += 1;
             }
-            else if (inventoryManager.interactionName9 == "봄_안내판")
+            else if (inventoryManager.interactionName9 == "봄_울타리")
             {
                 count2 += 1;
             }
