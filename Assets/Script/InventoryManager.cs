@@ -71,6 +71,8 @@ public class InventoryManager : MonoBehaviour
 
     private int pictureCount;
 
+
+
     [HideInInspector]
     public bool showInventory;
 
@@ -87,6 +89,15 @@ public class InventoryManager : MonoBehaviour
     public bool isDead;
     [HideInInspector]
     public bool modeChange;
+
+    public AudioClip ModeChange_1;
+    public AudioClip ModeChange_2;
+    public AudioClip Inven_open;
+    public AudioClip Inven_close;
+    public AudioClip Interaction_success;
+    public AudioClip Interaction_fail;
+    public AudioClip Inven_search;
+    public AudioClip Inven_delete;
  
     // Start is called before the first frame update
     void Start()
@@ -134,10 +145,12 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             modeChange = true;
+            SoundManager.instance.SFXPlay("ModeChange_2", ModeChange_2);
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             modeChange = false;
+            SoundManager.instance.SFXPlay("ModeChange_1", ModeChange_1);
         }
 
         if (manager.isPause == false)
@@ -187,10 +200,12 @@ public class InventoryManager : MonoBehaviour
             {
                 if (showInventory == true)
                 {
+                    SoundManager.instance.SFXPlay("Inven_close", Inven_close);
                     showInventory = false;
                 }
                 else
                 {
+                    SoundManager.instance.SFXPlay("Inven_open", Inven_open);
                     showInventory = true;
                 }
             }
@@ -343,6 +358,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
+            SoundManager.instance.SFXPlay("Inven_delete", Inven_delete);
             if (pictureCount > 3)
             {
                 renderTexture1.Release();
@@ -395,6 +411,7 @@ public class InventoryManager : MonoBehaviour
             {
                 if (interactionName1 == wantName)
                 {
+                    SoundManager.instance.SFXPlay("Interaction_success", Interaction_success);
                     isDead = true;
                     if (pictureCount > 3)
                     {
@@ -441,6 +458,7 @@ public class InventoryManager : MonoBehaviour
                 else
                 {
                     //사진이 틀렸을때
+                    SoundManager.instance.SFXPlay("Interaction_fail", Interaction_fail);
                     Debug.Log("잘못된사진");
                 }
             }
@@ -454,6 +472,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            SoundManager.instance.SFXPlay("Inven_search", Inven_search);
             if (pictureCount == 9)
             {
                 Graphics.Blit(renderTexture9, swapSlot);
@@ -595,6 +614,7 @@ public class InventoryManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
+            SoundManager.instance.SFXPlay("Inven_search", Inven_search);
             if (pictureCount == 9)
             {
                 Graphics.Blit(renderTexture1, swapSlot);

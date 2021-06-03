@@ -10,12 +10,15 @@ public class Stage1ClearScript : MonoBehaviour
     public GameObject Star3;
     public GameObject nextBtn;
 
+    public AudioSource BGM;
+    public AudioClip StageClear;
     private int fishBread;
     private int snowMan;
     private int cat;
 
     [SerializeField]
     private InventoryManager inventoryManager;
+
     
     // Start is called before the first frame update
     void Start()
@@ -41,7 +44,9 @@ public class Stage1ClearScript : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
+            AudioSource.Destroy(BGM);
             Debug.Log("Clear");
+            SoundManager.instance.SFXPlay("StageClear", StageClear);
             nextBtn.SetActive(true);
             //인벤1비교
             if (inventoryManager.interactionName1 == "붕어빵")
