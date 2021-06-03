@@ -19,9 +19,14 @@ public class UiManager : MonoBehaviour
 
 
 
+
+
+
     public void OnclickNewGameBtn()
     {
+ 
         SceneManager.LoadScene("WinterStage");
+        
     }
 
     public void OnclickContinueBtn()
