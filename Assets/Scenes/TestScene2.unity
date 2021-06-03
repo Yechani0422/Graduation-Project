@@ -817,6 +817,46 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: ModeChange_1
+      value: 
+      objectReference: {fileID: 8300000, guid: 027c45db83c64ca40b98d5ef0182bfc2, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: ModeChange_2
+      value: 
+      objectReference: {fileID: 8300000, guid: ae3088e2cc7482c4a9e8575c20c80d0c, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Inven_open
+      value: 
+      objectReference: {fileID: 8300000, guid: e5289c42d2443f24a906ee90796cb1bc, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Inven_close
+      value: 
+      objectReference: {fileID: 8300000, guid: a5453279780e8c0429871e14e1dc2e44, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Interaction_fail
+      value: 
+      objectReference: {fileID: 8300000, guid: 7ca53b7bd1db816419507d93482de302, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Interaction_success
+      value: 
+      objectReference: {fileID: 8300000, guid: f4c2151c0cd8f8d40bd46db3b3cc4c57, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Inven_search
+      value: 
+      objectReference: {fileID: 8300000, guid: d9dd0fa3412a05b47a64c4c234958983, type: 3}
+    - target: {fileID: 4980116909801868470, guid: b53abd3f5b0aa6c4ebc79762ab043871,
+        type: 3}
+      propertyPath: Inven_delete
+      value: 
+      objectReference: {fileID: 8300000, guid: a216e8a15f036ac4790130edb403cfb2, type: 3}
     - target: {fileID: 7731836009514564812, guid: b53abd3f5b0aa6c4ebc79762ab043871,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1586,6 +1626,8 @@ MonoBehaviour:
   Star2: {fileID: 674626313}
   Star3: {fileID: 52769752}
   nextBtn: {fileID: 1377208088}
+  BGM: {fileID: 835927249}
+  StageClear: {fileID: 8300000, guid: 42c99a1e3ce587440bdea3fa830aaf83, type: 3}
   inventoryManager: {fileID: 200983063}
 --- !u!61 &412118471
 BoxCollider2D:
@@ -2582,7 +2624,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4cc7a4327aa89d54aa247f025b7dc5e2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0afdeb0669edeb8479d516809f329187, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

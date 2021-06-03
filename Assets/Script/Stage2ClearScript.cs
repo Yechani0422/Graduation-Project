@@ -14,6 +14,9 @@ public class Stage2ClearScript : MonoBehaviour
     private int count2;
     private int count3;
 
+    public AudioSource BGM;
+    public AudioClip StageClear;
+
     [SerializeField]
     private InventoryManager inventoryManager;
 
@@ -41,6 +44,8 @@ public class Stage2ClearScript : MonoBehaviour
 
         if (other.gameObject.tag == "Player")
         {
+            AudioSource.Destroy(BGM);
+            SoundManager.instance.SFXPlay("StageClear", StageClear);
             Debug.Log("Clear");
             nextBtn.SetActive(true);
             //인벤1비교
