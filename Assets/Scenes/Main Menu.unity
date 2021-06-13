@@ -259,7 +259,7 @@ RectTransform:
   m_GameObject: {fileID: 132161771}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1674462587}
   m_RootOrder: 0
@@ -267,7 +267,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -380}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 274, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &132161773
 MonoBehaviour:
@@ -369,7 +369,7 @@ Animator:
   m_GameObject: {fileID: 132161771}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59f066ae73a23004b98742b34764f441, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0dda03ce1e1de840a8a99f4d20e8823, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -426,6 +426,7 @@ GameObject:
   - component: {fileID: 270519475}
   - component: {fileID: 270519474}
   - component: {fileID: 270519473}
+  - component: {fileID: 270519476}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -442,7 +443,7 @@ RectTransform:
   m_GameObject: {fileID: 270519471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 644678345}
   m_Father: {fileID: 54243938}
@@ -450,8 +451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1092, y: -558}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 700, y: -350}
+  m_SizeDelta: {x: 274, y: 94}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &270519473
 MonoBehaviour:
@@ -471,7 +472,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -543,6 +544,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 270519471}
   m_CullTransparentMesh: 0
+--- !u!95 &270519476
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270519471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0dda03ce1e1de840a8a99f4d20e8823, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &442064505
 GameObject:
   m_ObjectHideFlags: 0
@@ -796,7 +816,7 @@ RectTransform:
   m_GameObject: {fileID: 1169017738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 3}
   m_Children: []
   m_Father: {fileID: 1333494519}
   m_RootOrder: 3
@@ -804,7 +824,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -80}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 274, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1169017740
 MonoBehaviour:
@@ -906,7 +926,7 @@ Animator:
   m_GameObject: {fileID: 1169017738}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0941fbaefcb43534daaa40b08ccabe6e, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0dda03ce1e1de840a8a99f4d20e8823, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1010,7 +1030,7 @@ RectTransform:
   m_GameObject: {fileID: 1248287661}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 255250026}
   m_RootOrder: 0
@@ -1018,7 +1038,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 70}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 274, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1248287663
 MonoBehaviour:
@@ -1120,7 +1140,7 @@ Animator:
   m_GameObject: {fileID: 1248287661}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4465ada148ea2a7438fdb4ce77de0ae4, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0dda03ce1e1de840a8a99f4d20e8823, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1369,15 +1389,15 @@ RectTransform:
   m_GameObject: {fileID: 1612170789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 9, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1333494519}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 355}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 0, y: 296}
+  m_SizeDelta: {x: 850, y: 348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1612170791
 MonoBehaviour:
@@ -1702,7 +1722,7 @@ RectTransform:
   m_GameObject: {fileID: 1864280985}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1576398858}
   m_RootOrder: 0
@@ -1710,7 +1730,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -230}
-  m_SizeDelta: {x: 160, y: 30}
+  m_SizeDelta: {x: 274, y: 95}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1864280987
 MonoBehaviour:
@@ -1812,7 +1832,7 @@ Animator:
   m_GameObject: {fileID: 1864280985}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 75054a47beb4c1f409029f43c5643429, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0dda03ce1e1de840a8a99f4d20e8823, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
