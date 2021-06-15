@@ -14,6 +14,21 @@ public class SaveManager : MonoBehaviour
     private bool isSlot2;
     private bool isSlot3;
 
+    private int slot1stage1star;
+    private int slot1stage2star;
+    private int slot1stage3star;
+    private int slot1stage4star;
+
+    private int slot2stage1star;
+    private int slot2stage2star;
+    private int slot2stage3star;
+    private int slot2stage4star;
+
+    private int slot3stage1star;
+    private int slot3stage2star;
+    private int slot3stage3star;
+    private int slot3stage4star;
+
     public Text LoadButton1;
     public Text LoadButton2;
     public Text LoadButton3;
@@ -84,6 +99,10 @@ public class SaveManager : MonoBehaviour
                 _StageID1 = dontDestroy.StageID;
                 PlayerPrefs.SetInt("Stage" + SaveID.saveID, _StageID1);
                 PlayerPrefs.SetString("Time" + SaveID.saveID, System.DateTime.Now.ToString());
+                PlayerPrefs.SetInt("slot1stage1star", dontDestroy.Stage1Score);
+                PlayerPrefs.SetInt("slot1stage2star", dontDestroy.Stage2Score);
+                PlayerPrefs.SetInt("slot1stage3star", dontDestroy.Stage3Score);
+                PlayerPrefs.SetInt("slot1stage4star", dontDestroy.Stage4Score);
                 isSlot1 = true;
                // PlayerPrefs.SetInt("Slot1", 1);
                 time1 = System.DateTime.Now.ToString();
@@ -93,6 +112,10 @@ public class SaveManager : MonoBehaviour
                 _StageID2 = dontDestroy.StageID;
                 PlayerPrefs.SetInt("Stage" + SaveID.saveID, _StageID2);
                 PlayerPrefs.SetString("Time" + SaveID.saveID, System.DateTime.Now.ToString());
+                PlayerPrefs.SetInt("slot2stage1star", dontDestroy.Stage1Score);
+                PlayerPrefs.SetInt("slot2stage2star", dontDestroy.Stage2Score);
+                PlayerPrefs.SetInt("slot2stage3star", dontDestroy.Stage3Score);
+                PlayerPrefs.SetInt("slot2stage4star", dontDestroy.Stage4Score);
                 isSlot2 = true;
                 //PlayerPrefs.SetInt("Slot2", 1);
                 time2 = System.DateTime.Now.ToString();
@@ -102,6 +125,10 @@ public class SaveManager : MonoBehaviour
                 _StageID3 = dontDestroy.StageID;
                 PlayerPrefs.SetInt("Stage" + SaveID.saveID, _StageID3);
                 PlayerPrefs.SetString("Time" + SaveID.saveID, System.DateTime.Now.ToString());
+                PlayerPrefs.SetInt("slot3stage1star", dontDestroy.Stage1Score);
+                PlayerPrefs.SetInt("slot3stage2star", dontDestroy.Stage2Score);
+                PlayerPrefs.SetInt("slot3stage3star", dontDestroy.Stage3Score);
+                PlayerPrefs.SetInt("slot3stage4star", dontDestroy.Stage4Score);
                 isSlot3 = true;
                 //PlayerPrefs.SetInt("Slot3", 1);
                 time3 = System.DateTime.Now.ToString();
@@ -135,6 +162,21 @@ public class SaveManager : MonoBehaviour
         _StageID1 = PlayerPrefs.GetInt("Stage1");
         _StageID2 = PlayerPrefs.GetInt("Stage2");
         _StageID3 = PlayerPrefs.GetInt("Stage3");
+
+        slot1stage1star = PlayerPrefs.GetInt("slot1stage1star");
+        slot1stage2star = PlayerPrefs.GetInt("slot1stage2star");
+        slot1stage3star = PlayerPrefs.GetInt("slot1stage3star");
+        slot1stage4star = PlayerPrefs.GetInt("slot1stage4star");
+
+        slot2stage1star = PlayerPrefs.GetInt("slot1stage1star");
+        slot2stage2star = PlayerPrefs.GetInt("slot1stage2star");
+        slot2stage3star = PlayerPrefs.GetInt("slot1stage3star");
+        slot2stage4star = PlayerPrefs.GetInt("slot1stage4star");
+
+        slot3stage1star = PlayerPrefs.GetInt("slot1stage1star");
+        slot3stage2star = PlayerPrefs.GetInt("slot1stage2star");
+        slot3stage3star = PlayerPrefs.GetInt("slot1stage3star");
+        slot3stage4star = PlayerPrefs.GetInt("slot1stage4star");
     }
 
     public void OnClickLoad()
@@ -150,6 +192,10 @@ public class SaveManager : MonoBehaviour
                 SceneManager.LoadScene("TestStageSelect");
                 DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
                 dontDestroy.StageID = _StageID1;
+                dontDestroy.Stage1Score = slot1stage1star;
+                dontDestroy.Stage2Score = slot1stage2star;
+                dontDestroy.Stage3Score = slot1stage3star;
+                dontDestroy.Stage4Score = slot1stage4star;
             }
            
         }
@@ -164,6 +210,10 @@ public class SaveManager : MonoBehaviour
                 SceneManager.LoadScene("TestStageSelect");
                 DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
                 dontDestroy.StageID = _StageID2;
+                dontDestroy.Stage1Score = slot2stage1star;
+                dontDestroy.Stage2Score = slot2stage2star;
+                dontDestroy.Stage3Score = slot2stage3star;
+                dontDestroy.Stage4Score = slot2stage4star;
             }
         }
         else if (SaveID.saveID == 3)
@@ -176,6 +226,10 @@ public class SaveManager : MonoBehaviour
             {
                 SceneManager.LoadScene("TestStageSelect");
                 DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+                dontDestroy.Stage1Score = slot3stage1star;
+                dontDestroy.Stage2Score = slot3stage2star;
+                dontDestroy.Stage3Score = slot3stage3star;
+                dontDestroy.Stage4Score = slot3stage4star;
                 dontDestroy.StageID = _StageID3;
             }
         }
@@ -193,6 +247,10 @@ public class SaveManager : MonoBehaviour
             //_StageID1 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
+            dontDestroy.Stage1Score = 0;
+            dontDestroy.Stage2Score = 0;
+            dontDestroy.Stage3Score = 0;
+            dontDestroy.Stage4Score = 0;
             isSlot1 = false;
         }
         else if (SaveID.saveID == 2)
@@ -202,6 +260,10 @@ public class SaveManager : MonoBehaviour
             //_StageID2 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
+            dontDestroy.Stage1Score = 0;
+            dontDestroy.Stage2Score = 0;
+            dontDestroy.Stage3Score = 0;
+            dontDestroy.Stage4Score = 0;
             isSlot2 = false;
         }
         else if (SaveID.saveID == 3)
@@ -211,6 +273,10 @@ public class SaveManager : MonoBehaviour
             //_StageID3 = 0;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
             dontDestroy.StageID = 0;
+            dontDestroy.Stage1Score = 0;
+            dontDestroy.Stage2Score = 0;
+            dontDestroy.Stage3Score = 0;
+            dontDestroy.Stage4Score = 0;
             isSlot3 = false;
         }       
         

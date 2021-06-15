@@ -11,8 +11,22 @@ public class StageChange : MonoBehaviour
     public GameObject Summer;
     public GameObject Fall;
     public GameObject Winter;
-    
-    
+
+    public GameObject stage1star1;
+    public GameObject stage1star2;
+    public GameObject stage1star3;
+
+    public GameObject stage2star1;
+    public GameObject stage2star2;
+    public GameObject stage2star3;
+
+    public GameObject stage3star1;
+    public GameObject stage3star2;
+    public GameObject stage3star3;
+
+    public GameObject stage4star1;
+    public GameObject stage4star2;
+    public GameObject stage4star3;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +35,7 @@ public class StageChange : MonoBehaviour
         {
             dontDestroy.StageID = 1;
         }
-
+        
         GameObject dont = GameObject.FindGameObjectWithTag("DontDestroy");
         AudioSource soundOff = dont.GetComponent<AudioSource>();
 
@@ -31,6 +45,22 @@ public class StageChange : MonoBehaviour
         Summer.SetActive(false);
         Fall.SetActive(false);
         Winter.SetActive(true);
+
+        stage1star1.SetActive(false);
+        stage1star2.SetActive(false);
+        stage1star3.SetActive(false);
+
+        stage2star1.SetActive(false);
+        stage2star2.SetActive(false);
+        stage2star3.SetActive(false);
+
+        stage3star1.SetActive(false);
+        stage3star2.SetActive(false);
+        stage3star3.SetActive(false);
+
+        stage4star1.SetActive(false);
+        stage4star2.SetActive(false);
+        stage4star3.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,8 +91,94 @@ public class StageChange : MonoBehaviour
                     EventSystem.current.SetSelectedGameObject(Winter);
                 }
             }
-           
-        
+
+        StarManager();
+    }
+
+    void StarManager()
+    {
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+
+        //stage1
+        if(Winter.activeSelf==true)
+        {
+            if (dontDestroy.Stage1Score == 1)
+            {
+                stage1star1.SetActive(true);
+            }
+            else if (dontDestroy.Stage1Score == 2)
+            {
+                stage1star1.SetActive(true);
+                stage1star2.SetActive(true);
+            }
+            else if (dontDestroy.Stage1Score == 3)
+            {
+                stage1star1.SetActive(true);
+                stage1star2.SetActive(true);
+                stage1star3.SetActive(true);
+            }
+        }
+
+
+        //stage2
+        if (Spring.activeSelf == true)
+        {
+            if (dontDestroy.Stage2Score == 1)
+            {
+                stage2star1.SetActive(true);
+            }
+            else if (dontDestroy.Stage2Score == 2)
+            {
+                stage2star1.SetActive(true);
+                stage2star2.SetActive(true);
+            }
+            else if (dontDestroy.Stage2Score == 3)
+            {
+                stage2star1.SetActive(true);
+                stage2star2.SetActive(true);
+                stage2star3.SetActive(true);
+            }
+        }
+
+        //stage3
+        if (Summer.activeSelf == true)
+        {
+            if (dontDestroy.Stage3Score == 1)
+            {
+                stage3star1.SetActive(true);
+            }
+            else if (dontDestroy.Stage3Score == 2)
+            {
+                stage3star1.SetActive(true);
+                stage3star2.SetActive(true);
+            }
+            else if (dontDestroy.Stage3Score == 3)
+            {
+                stage3star1.SetActive(true);
+                stage3star2.SetActive(true);
+                stage3star3.SetActive(true);
+            }
+        }
+
+        //stage4
+        if (Fall.activeSelf == true)
+        {
+            if (dontDestroy.Stage4Score == 1)
+            {
+                stage4star1.SetActive(true);
+            }
+            else if (dontDestroy.Stage4Score == 2)
+            {
+                stage4star1.SetActive(true);
+                stage4star2.SetActive(true);
+            }
+            else if (dontDestroy.Stage4Score == 3)
+            {
+                stage4star1.SetActive(true);
+                stage4star2.SetActive(true);
+                stage4star3.SetActive(true);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -79,7 +195,7 @@ public class StageChange : MonoBehaviour
     private void ChangeStage()
     {
        
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 if(Spring.activeSelf==true)
                 {
@@ -103,7 +219,7 @@ public class StageChange : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 if (Spring.activeSelf == true)
                 {
@@ -129,6 +245,58 @@ public class StageChange : MonoBehaviour
         
     }
 
+    public void OnClickLeft()
+    {
+        
+            if (Spring.activeSelf == true)
+            {
+                Spring.SetActive(false);
+                Winter.SetActive(true);
+            }
+            else if (Winter.activeSelf == true)
+            {
+                Winter.SetActive(false);
+                Fall.SetActive(true);
+            }
+            else if (Fall.activeSelf == true)
+            {
+                Fall.SetActive(false);
+                Summer.SetActive(true);
+            }
+            else if (Summer.activeSelf == true)
+            {
+                Summer.SetActive(false);
+                Spring.SetActive(true);
+            }
+        
+    }
+
+    public void OnClickRight()
+    {
+
+        if (Spring.activeSelf == true)
+        {
+            Spring.SetActive(false);
+            Summer.SetActive(true);
+        }
+        else if (Summer.activeSelf == true)
+        {
+            Summer.SetActive(false);
+            Fall.SetActive(true);
+        }
+        else if (Fall.activeSelf == true)
+        {
+            Fall.SetActive(false);
+            Winter.SetActive(true);
+        }
+        else if (Winter.activeSelf == true)
+        {
+            Winter.SetActive(false);
+            Spring.SetActive(true);
+        }
+
+    }
+
     public void OnClickSpring()
     {
         DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
@@ -151,6 +319,11 @@ public class StageChange : MonoBehaviour
     public void OnClickWinter()
     {
         SceneManager.LoadScene("WinterStage");
+    }
+
+    public void OnClickSave()
+    {
+        SceneManager.LoadScene("TestStageSelect");
     }
 
     public void OnClickExit()

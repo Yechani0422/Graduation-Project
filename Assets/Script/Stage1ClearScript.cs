@@ -9,6 +9,7 @@ public class Stage1ClearScript : MonoBehaviour
     public GameObject Star2;
     public GameObject Star3;
     public GameObject nextBtn;
+    public GameObject BG;
 
     public AudioSource BGM;
     public AudioClip StageClear;
@@ -27,6 +28,7 @@ public class Stage1ClearScript : MonoBehaviour
         Star2.SetActive(false);
         Star3.SetActive(false);
         nextBtn.SetActive(false);
+        BG.SetActive(false);
         fishBread = 0;
         snowMan = 0;
         cat = 0;
@@ -48,6 +50,7 @@ public class Stage1ClearScript : MonoBehaviour
             Debug.Log("Clear");
             SoundManager.instance.SFXPlay("StageClear", StageClear);
             nextBtn.SetActive(true);
+            BG.SetActive(true);
             //인벤1비교
             if (inventoryManager.interactionName1 == "붕어빵")
             {
@@ -202,6 +205,22 @@ public class Stage1ClearScript : MonoBehaviour
 
             Time.timeScale = 0f;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+
+            if(dontDestroy.Stage1Score<3&&Score==3)//star3
+            {
+                dontDestroy.Stage1Score = Score;
+            }
+
+            if(dontDestroy.Stage1Score<2&&Score==2)//star2
+            {
+                dontDestroy.Stage1Score = Score;
+            }
+
+            if(dontDestroy.Stage1Score<1&&Score==1)//star1
+            {
+                dontDestroy.Stage1Score = Score;
+            }
+            
             if (dontDestroy.StageID < 2 && Score == 3)
             {
                 dontDestroy.StageID = 2;

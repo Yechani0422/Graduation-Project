@@ -24,7 +24,12 @@ public class UiManager : MonoBehaviour
 
     public void OnclickNewGameBtn()
     {
- 
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        dontDestroy.StageID = 0;
+        dontDestroy.Stage1Score = 0;
+        dontDestroy.Stage2Score = 0;
+        dontDestroy.Stage3Score = 0;
+        dontDestroy.Stage4Score = 0;
         SceneManager.LoadScene("TestStageSelect");
         
     }

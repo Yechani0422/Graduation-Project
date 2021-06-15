@@ -9,6 +9,7 @@ public class Stage2ClearScript : MonoBehaviour
     public GameObject Star2;
     public GameObject Star3;
     public GameObject nextBtn;
+    public GameObject BG;
 
     private int count1;
     private int count2;
@@ -27,6 +28,7 @@ public class Stage2ClearScript : MonoBehaviour
         Star2.SetActive(false);
         Star3.SetActive(false);
         nextBtn.SetActive(false);
+        BG.SetActive(false);
         count1 = 0;
         count2 = 0;
         count3 = 0;
@@ -48,6 +50,7 @@ public class Stage2ClearScript : MonoBehaviour
             SoundManager.instance.SFXPlay("StageClear", StageClear);
             Debug.Log("Clear");
             nextBtn.SetActive(true);
+            BG.SetActive(true);
             //인벤1비교
             if (inventoryManager.interactionName1 == "봄_동상")
             {
@@ -202,6 +205,22 @@ public class Stage2ClearScript : MonoBehaviour
 
             Time.timeScale = 0f;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+
+            if (dontDestroy.Stage2Score < 3 && Score == 3)//star3
+            {
+                dontDestroy.Stage2Score = Score;
+            }
+
+            if (dontDestroy.Stage2Score < 2 && Score == 2)//star2
+            {
+                dontDestroy.Stage2Score = Score;
+            }
+
+            if (dontDestroy.Stage2Score < 1 && Score == 1)//star1
+            {
+                dontDestroy.Stage2Score = Score;
+            }
+
             if (dontDestroy.StageID < 3 && Score == 3)
             {
                 dontDestroy.StageID = 3;
