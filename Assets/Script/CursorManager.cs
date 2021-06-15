@@ -42,12 +42,12 @@ public class CursorManager : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 if (inventory.showInventory == false)
-                {
-                    cameraRange.GetComponent<Image>().enabled = true;
-                    Cursor.visible = false;
-                }
+        {
+            cameraRange.GetComponent<Image>().enabled = true;
+            Cursor.visible = false;
+        }
 
-            }
+    }
 
 
             if (Input.GetMouseButtonUp(0))

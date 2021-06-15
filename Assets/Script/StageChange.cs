@@ -61,6 +61,8 @@ public class StageChange : MonoBehaviour
         stage4star1.SetActive(false);
         stage4star2.SetActive(false);
         stage4star3.SetActive(false);
+
+        Debug.Log("Stage1"+dontDestroy.Stage1Score);
     }
 
     // Update is called once per frame
