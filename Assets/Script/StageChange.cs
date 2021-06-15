@@ -323,7 +323,7 @@ public class StageChange : MonoBehaviour
 
     public void OnClickSave()
     {
-        SceneManager.LoadScene("TestStageSelect");
+        SceneManager.LoadScene("SaveLoad");
     }
 
     public void OnClickExit()
