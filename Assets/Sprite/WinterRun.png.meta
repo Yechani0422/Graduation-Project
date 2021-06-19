@@ -1,46 +1,46 @@
 fileFormatVersion: 2
-guid: 2c28dcb9d003b324caa5ad8e4afbfea2
+guid: f102d26697299a846aa2f1aee1c6542e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7954534589528975267
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_0"
+      213: 2544620959852068554
+    second: WinterRun_0
   - first:
-      213: 7267323031672608063
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_1"
+      213: -739535952639389271
+    second: WinterRun_1
   - first:
-      213: 8890841794443954706
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_2"
+      213: 338951867197726624
+    second: WinterRun_2
   - first:
-      213: -8769066652376551278
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_3"
+      213: 3382041444940447474
+    second: WinterRun_3
   - first:
-      213: -7424366107137704622
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_4"
+      213: 4781817126575639341
+    second: WinterRun_4
   - first:
-      213: 991904126386853735
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_5"
+      213: -1887779499811886311
+    second: WinterRun_5
   - first:
-      213: 271381060889440026
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_6"
+      213: -3296060738164211625
+    second: WinterRun_6
   - first:
-      213: 4818403769539554902
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_7"
+      213: -3911790736813497534
+    second: WinterRun_7
   - first:
-      213: -7751036148233309697
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_8"
+      213: 4953555036656450569
+    second: WinterRun_8
   - first:
-      213: -4119360780201099629
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_9"
+      213: 2883748020621913836
+    second: WinterRun_9
   - first:
-      213: 2902535369063003174
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_10"
+      213: -8787003374994807861
+    second: WinterRun_10
   - first:
-      213: 8179568927532512129
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_11"
+      213: 5654411925310862797
+    second: WinterRun_11
   - first:
-      213: -7144603961092362019
-    second: "\uB6F0\uAE30_\uACA8\uC6B8_12"
+      213: 7483627350472768127
+    second: WinterRun_12
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,15 +122,27 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_0"
+      name: WinterRun_0
       rect:
         serializedVersion: 2
-        x: 274
-        y: 1606
+        x: 45
+        y: 1769
         width: 212
         height: 697
       alignment: 0
@@ -140,41 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a7ae62701f246e60800000000000000
-      internalID: 7954534589528975267
+      spriteID: acefeffe74f405320800000000000000
+      internalID: 2544620959852068554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_1"
+      name: WinterRun_1
       rect:
         serializedVersion: 2
-        x: 727
-        y: 1604
-        width: 309
-        height: 689
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f355cda1bc7bad460800000000000000
-      internalID: 7267323031672608063
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_2"
-      rect:
-        serializedVersion: 2
-        x: 1226
-        y: 1612
+        x: 361
+        y: 1688
         width: 312
-        height: 670
+        height: 671
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21a4700a18d926b70800000000000000
-      internalID: 8890841794443954706
+      spriteID: 9a19c4428f3acb5f0800000000000000
+      internalID: -739535952639389271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_3"
+      name: WinterRun_2
       rect:
         serializedVersion: 2
-        x: 118
-        y: 830
+        x: 700
+        y: 1651
         width: 310
-        height: 701
+        height: 702
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2903f5517540e4680800000000000000
-      internalID: -8769066652376551278
+      spriteID: 0af96486de234b400800000000000000
+      internalID: 338951867197726624
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_4"
+      name: WinterRun_3
       rect:
         serializedVersion: 2
-        x: 508
-        y: 820
+        x: 1096
+        y: 1623
         width: 241
-        height: 704
+        height: 706
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,41 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d7b9d8c5a57f890800000000000000
-      internalID: -7424366107137704622
+      spriteID: 2fef25d76cc6fee20800000000000000
+      internalID: 3382041444940447474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_5"
+      name: WinterRun_4
       rect:
         serializedVersion: 2
-        x: 828
-        y: 816
-        width: 211
-        height: 697
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76758803c83f3cd00800000000000000
-      internalID: 991904126386853735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_6"
-      rect:
-        serializedVersion: 2
-        x: 1121
-        y: 804
+        x: 1417
+        y: 1637
         width: 212
-        height: 699
+        height: 698
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,18 +236,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1f651513a324c300800000000000000
-      internalID: 271381060889440026
+      spriteID: d2b8b6a675d6c5240800000000000000
+      internalID: 4781817126575639341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_7"
+      name: WinterRun_5
       rect:
         serializedVersion: 2
-        x: 1391
-        y: 813
+        x: 190
+        y: 879
+        width: 212
+        height: 700
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ba27bfb824dc5e0800000000000000
+      internalID: -1887779499811886311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinterRun_6
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 881
         width: 246
         height: 699
       alignment: 0
@@ -287,19 +278,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 65eeecb03b86ed240800000000000000
-      internalID: 4818403769539554902
+      spriteID: 7504c9fc83a0242d0800000000000000
+      internalID: -3296060738164211625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_8"
+      name: WinterRun_7
       rect:
         serializedVersion: 2
-        x: 107
-        y: 52
-        width: 309
+        x: 742
+        y: 876
+        width: 308
         height: 692
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -308,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff1775f90b9ce6490800000000000000
-      internalID: -7751036148233309697
+      spriteID: 2436198ec0786b9c0800000000000000
+      internalID: -3911790736813497534
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_9"
+      name: WinterRun_8
       rect:
         serializedVersion: 2
-        x: 522
-        y: 47
+        x: 1164
+        y: 895
         width: 281
-        height: 696
+        height: 695
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,20 +320,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 39eff6a123715d6c0800000000000000
-      internalID: -4119360780201099629
+      spriteID: 90c314f8f009eb440800000000000000
+      internalID: 4953555036656450569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_10"
+      name: WinterRun_9
       rect:
         serializedVersion: 2
-        x: 877
-        y: 59
-        width: 216
-        height: 700
+        x: 178
+        y: 78
+        width: 217
+        height: 698
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,19 +341,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 624f1053a80e74820800000000000000
-      internalID: 2902535369063003174
+      spriteID: ceea7e6cb81250820800000000000000
+      internalID: 2883748020621913836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_11"
+      name: WinterRun_10
       rect:
         serializedVersion: 2
-        x: 1182
-        y: 72
-        width: 211
+        x: 524
+        y: 74
+        width: 212
         height: 692
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -371,18 +362,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 183f5653a9aa38170800000000000000
-      internalID: 8179568927532512129
+      spriteID: bc3a6496cfa4e0680800000000000000
+      internalID: -8787003374994807861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: "\uB6F0\uAE30_\uACA8\uC6B8_12"
+      name: WinterRun_11
       rect:
         serializedVersion: 2
-        x: 1433
-        y: 26
+        x: 846
+        y: 47
         width: 267
         height: 703
       alignment: 0
@@ -392,8 +383,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd0bd361d8449dc90800000000000000
-      internalID: -7144603961092362019
+      spriteID: dc5f2ed00b1887e40800000000000000
+      internalID: 5654411925310862797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WinterRun_12
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 64
+        width: 322
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7ab350ec6f2bd760800000000000000
+      internalID: 7483627350472768127
       vertices: []
       indices: 
       edges: []
