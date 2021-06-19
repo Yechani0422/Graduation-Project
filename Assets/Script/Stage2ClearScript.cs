@@ -103,60 +103,7 @@ public class Stage2ClearScript : MonoBehaviour
             {
                 count3 += 1;
             }
-
-            //인벤5비교
-            if (inventoryManager.interactionName5 == "봄_동상")
-            {
-                count1 += 1;
-            }
-            else if (inventoryManager.interactionName5 == "봄_울타리")
-            {
-                count2 += 1;
-            }
-            else if (inventoryManager.interactionName5 == "cat")
-            {
-                count3 += 1;
-            }
-
-            //인벤6비교
-            if (inventoryManager.interactionName6 == "봄_동상")
-            {
-                count1 += 1;
-            }
-            else if (inventoryManager.interactionName6 == "봄_울타리")
-            {
-                count2 += 1;
-            }
-            else if (inventoryManager.interactionName6 == "cat")
-            {
-                count3 += 1;
-            }
-            //인벤7비교
-            if (inventoryManager.interactionName7 == "봄_동상")
-            {
-                count1 += 1;
-            }
-            else if (inventoryManager.interactionName7 == "봄_울타리")
-            {
-                count2 += 1;
-            }
-            else if (inventoryManager.interactionName7 == "cat")
-            {
-                count3 += 1;
-            }
-            //인벤8비교
-            if (inventoryManager.interactionName8 == "봄_동상")
-            {
-                count1 += 1;
-            }
-            else if (inventoryManager.interactionName8 == "봄_울타리")
-            {
-                count2 += 1;
-            }
-            else if (inventoryManager.interactionName8 == "cat")
-            {
-                count3 += 1;
-            }
+            
             //인벤9비교
             if (inventoryManager.interactionName9 == "봄_동상")
             {

@@ -103,60 +103,7 @@ public class Stage1ClearScript : MonoBehaviour
             {
                 cat += 1;
             }
-
-            //인벤5비교
-            if (inventoryManager.interactionName5 == "붕어빵")
-            {
-                fishBread += 1;
-            }
-            else if (inventoryManager.interactionName5 == "눈사람")
-            {
-                snowMan += 1;
-            }
-            else if (inventoryManager.interactionName5 == "cat")
-            {
-                cat += 1;
-            }
-
-            //인벤6비교
-            if (inventoryManager.interactionName6 == "붕어빵")
-            {
-                fishBread += 1;
-            }
-            else if (inventoryManager.interactionName6 == "눈사람")
-            {
-                snowMan += 1;
-            }
-            else if (inventoryManager.interactionName6 == "cat")
-            {
-                cat += 1;
-            }
-            //인벤7비교
-            if (inventoryManager.interactionName7 == "붕어빵")
-            {
-                fishBread += 1;
-            }
-            else if (inventoryManager.interactionName7 == "눈사람")
-            {
-                snowMan += 1;
-            }
-            else if (inventoryManager.interactionName7 == "cat")
-            {
-                cat += 1;
-            }
-            //인벤8비교
-            if (inventoryManager.interactionName8 == "붕어빵")
-            {
-                fishBread += 1;
-            }
-            else if (inventoryManager.interactionName8 == "눈사람")
-            {
-                snowMan += 1;
-            }
-            else if (inventoryManager.interactionName8 == "cat")
-            {
-                cat += 1;
-            }
+            
             //인벤9비교
             if (inventoryManager.interactionName9 == "붕어빵")
             {
