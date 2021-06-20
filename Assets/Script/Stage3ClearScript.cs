@@ -153,19 +153,19 @@ public class Stage3ClearScript : MonoBehaviour
             Time.timeScale = 0f;
             DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
 
-            if (dontDestroy.Stage2Score < 3 && Score == 3)//star3
+            if (dontDestroy.Stage3Score < 3 && Score == 3)//star3
             {
-                dontDestroy.Stage2Score = Score;
+                dontDestroy.Stage3Score = Score;
             }
 
-            if (dontDestroy.Stage2Score < 2 && Score == 2)//star2
+            if (dontDestroy.Stage3Score < 2 && Score == 2)//star2
             {
-                dontDestroy.Stage2Score = Score;
+                dontDestroy.Stage3Score = Score;
             }
 
-            if (dontDestroy.Stage2Score < 1 && Score == 1)//star1
+            if (dontDestroy.Stage3Score < 1 && Score == 1)//star1
             {
-                dontDestroy.Stage2Score = Score;
+                dontDestroy.Stage3Score = Score;
             }
 
             if (dontDestroy.StageID < 3 && Score == 3)
