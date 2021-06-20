@@ -4731,7 +4731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412118469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 310.07, y: 0.09, z: 3.27}
+  m_LocalPosition: {x: 316.8, y: 0.09, z: 3.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11448,8 +11448,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.49, y: 5.4, z: 1.3433663}
-  m_Center: {x: 1.53, y: 0, z: 0.67168313}
+  m_Size: {x: 6.91, y: 5.4, z: 1.3433663}
+  m_Center: {x: 3.08, y: 0, z: 0.67168313}
 --- !u!1001 &915829657
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13525,7 +13525,7 @@ PrefabInstance:
     - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
       propertyPath: m_Name
-      value: Stump_01 (2)
+      value: Stump_01
       objectReference: {fileID: 0}
     - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
@@ -14183,7 +14183,7 @@ PrefabInstance:
     - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}
       propertyPath: m_Name
-      value: Stump_01 (1)
+      value: Stump_01
       objectReference: {fileID: 0}
     - target: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
         type: 3}

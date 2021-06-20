@@ -310,12 +310,20 @@ public class StageChange : MonoBehaviour
 
     public void OnClickSummer()
     {
-       // SceneManager.LoadScene("TestStageSelect");
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if (dontDestroy.StageID >= 3)
+        {
+            SceneManager.LoadScene("WinterStage2");
+        }
     }
 
     public void OnClickFall()
     {
-        
+        DontDestroyOnLoad dontDestroy = FindObjectOfType<DontDestroyOnLoad>();
+        if (dontDestroy.StageID >= 4)
+        {
+            SceneManager.LoadScene("SpringStage2");
+        }
     }
 
     public void OnClickWinter()
