@@ -168,7 +168,7 @@ public class Stage3ClearScript : MonoBehaviour
                 dontDestroy.Stage3Score = Score;
             }
 
-            if (dontDestroy.StageID < 3 && Score == 3)
+            if (dontDestroy.StageID < 4 && Score == 3)
             {
                 dontDestroy.StageID = 4;
             }
